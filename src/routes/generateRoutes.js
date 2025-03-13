@@ -1,27 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const pageData = require('./pageData');
 
 // Función para generar variables de la página
 const generatePageData = (viewName) => {
-  const pageData = {
-    index: {
-      pageTitle: 'Suministros Herco',
-      bodyClass: 'homepage',
-      robots: 'all'
-    },
-    brands: {
-      pageTitle: 'Marcas - Suministros Herco',
-      bodyClass: 'brands',
-      robots: 'all'
-    },
-    search: {
-      pageTitle: 'Buscar por - Suministros Herco',
-      bodyClass: 'page-search',
-      robots: 'noindex,follow'
-    }
-    // Agrega más vistas aquí según sea necesario
-  };
-
   return pageData[viewName] || {
     pageTitle: 'Suministros Herco',
     bodyClass: '',
@@ -40,7 +22,8 @@ const generateRoutes = (router) => {
       const routePath = viewName === 'index' ? '/' : `/${viewName}`;
 
       router.get(routePath, (req, res) => {
-        res.render(viewName, generatePageData(viewName));
+        const data = generatePageData(viewName);
+        res.render(viewName, data);
       });
     }
   });

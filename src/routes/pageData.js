@@ -4,15 +4,25 @@ const pageData = {
     bodyClass: 'homepage',
     robots: 'all'
   },
-  brands: {
+  'aviso-legal': {
+    pageTitle: 'Aviso Legal - Suministros Herco',
+    bodyClass: 'homepage',
+    robots: 'noindex, follow'
+  },
+  blog: {
+    pageTitle: 'Blog de Suministros Industriales Herco',
+    bodyClass: 'blog',
+    robots: 'index, follow'
+  },
+  carrito: {
+    pageTitle: 'Blog de Suministros Industriales Herco',
+    bodyClass: 'blog',
+    robots: 'index, follow'
+  },
+  marcas: {
     pageTitle: 'Marcas - Suministros Herco',
     bodyClass: 'brands',
-    robots: 'all'
-  },
-  search: {
-    pageTitle: 'Buscar por - Suministros Herco',
-    bodyClass: 'page-search',
-    robots: 'noindex,follow'
+    robots: 'noindex, follow'
   }
   // Agrega más vistas aquí según sea necesario
 };

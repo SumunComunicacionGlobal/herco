@@ -16,11 +16,12 @@
     "ejs": "^3.1.10",
     "express": "^4.21.2",
     "express-ejs-layouts": "^2.5.1",
+    "fs-extra": "^11.3.0",
     "jquery": "^3.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:nodemom": "nodemon app.js -e *",
+    "watch:nodemom": "nodemon app.js",
     "watch:sass": "sass --no-source-map --watch src/sass/main.scss public/css/main.css",
     "watch:js": "nodemon --watch src/js/ --ext js --exec \"npm run compile:js\"",
     "compile:js": "uglifyjs src/js/*.js -o public/js/herco.min.js --compress",
