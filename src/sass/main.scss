@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+@use "normalize";
+
+/*--------------------------------------------------------------
+# Core
+--------------------------------------------------------------*/
+@use 'core/mixins' as *;
+@use 'core/variables' as *;
+@use 'core/helpers' as *;
+
+// Styles
+@use 'styles/grid';
+@use 'styles/colors';
+@use 'styles/typography';
+@use 'styles/backgrounds';
+@use 'styles/spacing';
+@use 'styles/icons';
+@use 'styles/buttons';
+
+// Components
+@use 'components/navigation';
+@use 'components/mmenu-light';
+@use 'components/hero';
+@use 'components/forms';
+@use 'components/elements';
+@use 'components/card';
+@use 'components/footer';
+@use 'components/scrollable';
+@use 'components/lightbox';
+
+//Pages
+@use 'pages/homepage';
+@use 'pages/search';
+@use 'pages/subcategory';
+@use 'pages/category';
+@use 'pages/product';
+@use 'pages/compare';
+@use 'pages/login';
+@use 'pages/brands';
+@use 'pages/cart';
+@use 'pages/blog';
+@use 'pages/my-account';
+
+
+body {
+    background-color: #f6f6f6;
+}

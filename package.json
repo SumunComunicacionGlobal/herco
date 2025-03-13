@@ -1,0 +1,35 @@
+{
+  "name": "herco",
+  "version": "2.0.0",
+  "description": "Herco Ecommerce Web Site",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SumunComunicacionGlobal/herco.git"
+  },
+  "author": "Alvaro Rubioc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SumunComunicacionGlobal/herco/issues"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-ejs-layouts": "^2.5.1",
+    "jquery": "^3.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:nodemom": "nodemon app.js -e *",
+    "watch:sass": "sass --no-source-map --watch src/sass/main.scss public/css/main.css",
+    "watch:js": "nodemon --watch src/js/ --ext js --exec \"npm run compile:js\"",
+    "compile:js": "uglifyjs src/js/*.js -o public/js/herco.min.js --compress",
+    "dev": "npm-run-all --parallel watch:sass watch:js watch:nodemom"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.85.1",
+    "uglify-js": "^3.19.3"
+  }
+}

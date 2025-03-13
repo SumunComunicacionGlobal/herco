@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="es" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title><%= pageTitle %></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="robots" content="<%= robots %>">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="img/low/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="<%= bodyClass %>">
+	
+    <%- include('../partials/header') %>
+    <div class="clearfix"></div>
+    <%- body %>
+    <div class="clearfix"></div>
+    <%- include('../partials/footer') %>
+    
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/herco.min.js"></script>
+    <script>
+        const menu = mmlight(document.querySelector('#sh-nav'));
+        menu.create('(max-width: 1024px)'); 		// menu.create( 'all' );
+        menu.init('selected');	// menu.init( 'custom-selected-classname' );
+    
+        //	Open the menu.
+        document.querySelector('a[href="#menu"]')
+            .addEventListener('click', (evnt) => {
+                menu.open();
+    
+                //	Don't forget to "preventDefault" and to "stopPropagation".
+                evnt.preventDefault();
+                evnt.stopPropagation();
+            });
+    
+    </script>
+    
+    <script>
+        (function() {
+            var $gallery = new SimpleLightbox('.product-img a', {});
+        })();
+    </script>
+    
+    </body>
+    
+    </html>    
