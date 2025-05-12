@@ -13,19 +13,6 @@ app.use(express.static('public'));
 // Generar rutas dinámicamente
 generateRoutes(app);
 
-//app.get("/", (req, res) => {
-//  res.render("index", { pageTitle: "Suministros HERCO", robots: "all", bodyClass: "homepage" });
-//});
-//
-//app.get("/aviso-legal", (req, res) => {
-  //res.render("aviso-legal", { pageTitle: "Aviso Legal - Suministros HERCO", robots: "noindex, follow", bodyClass: "homepage" });
-//});
-//
-//app.get("/marcas", (req, res) => {
-  //res.render("marcas", { pageTitle: "Marcas - Suministros HERCO", robots: "noindex, noindex,follow", bodyClass: "brands" });
-//});
-
-
 const PORT = 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

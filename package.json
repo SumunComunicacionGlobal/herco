@@ -21,11 +21,11 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:nodemom": "nodemon app.js",
+    "watch:nodemon": "nodemon app.js",
     "watch:sass": "sass --no-source-map --watch src/sass/main.scss public/css/main.css",
     "watch:js": "nodemon --watch src/js/ --ext js --exec \"npm run compile:js\"",
     "compile:js": "uglifyjs src/js/*.js -o public/js/herco.min.js --compress",
-    "dev": "npm-run-all --parallel watch:sass watch:js watch:nodemom"
+    "dev": "npm-run-all --parallel watch:sass watch:js watch:nodemon"
   },
   "devDependencies": {
     "nodemon": "^3.1.9",
