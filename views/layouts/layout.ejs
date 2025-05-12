@@ -15,6 +15,7 @@
 
 <body class="<%= bodyClass %>">
 	
+    <%- include('../partials/topbar') %>
     <%- include('../partials/header') %>
     <div class="clearfix"></div>
     <%- body %>
@@ -25,9 +26,6 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/herco.min.js"></script>
     <script>
-        const menu = mmlight(document.querySelector('#sh-nav'));
-        menu.create('(max-width: 1024px)'); 		// menu.create( 'all' );
-        menu.init('selected');	// menu.init( 'custom-selected-classname' );
     
         //	Open the menu.
         document.querySelector('a[href="#menu"]')

@@ -4,8 +4,12 @@ Typography
 @use '../core/variables'as *;
 @use '../core/mixins'as *;
 
-
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
+@font-face {
+    font-family: 'Ciutadella';
+    src: url('/font/Ciutadella-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i&display=swap');
 
 
@@ -29,6 +33,7 @@ h6,
 .sh-text__h4,
 .sh-text__h5 {
     color: $color-dark-navy-blue;
+    text-transform: uppercase;
 }
 
 h2,
