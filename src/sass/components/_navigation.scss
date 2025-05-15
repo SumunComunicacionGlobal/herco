@@ -1,9 +1,6 @@
 @use '../core/variables' as *;
 @use '../core/mixins' as *;
 
-nav#sh-nav:not(.mm) {
-	display: none;
-}
 
 #sh-navigation {
     background: white;
@@ -26,79 +23,131 @@ nav#sh-nav:not(.mm) {
 
 .scrollDown .sh-nav--secondary {
 
-    transition: all 0.3s;
-    span > span {
-        opacity: 0;
-        font-size: 0;
-    }
 }
 
-.sh-top-nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 60px;
-    align-items: center;
-    height: 5rem;
-    border-bottom: 1px solid $color-grey-50;
+#sh-navigation {
     background: white;
-    position: fixed;
-    z-index: 9999;
-    width: 100%;
-    top: 0;
+    border-bottom: 1px solid $color-grey-50;
     transition: all 0.5s;
 
-    @include breakpoint(tablet) {
-        grid-template-columns: 60px 1fr 1fr 60px;
-        position: relative;
-        z-index: 1;
-    }
-    @include breakpoint(mobile) {
-        grid-template-columns: 60px 1fr 60px;
-        .sh-nav--brand {
-            justify-self: center;
-        }
-    }
-    a {
-        text-decoration: none;
-        &:hover { color: $color-navy-blue; }
-    }
-    
-    i {
-        font-size: $text__h3;
-        color: $color-navy-blue;
-    }
-    
-    ul {
-        list-style: none;
-    }
+    .sh-top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        height: 5rem;
+        border-bottom: 1px solid $color-grey-50;
+        background: white;
+        position: sticky;
+        z-index: 9999;
+        width: 100%;
+        top: 0;
+        transition: all 0.5s;
+
+            a {
+                text-decoration: none;
+                &:hover { color: $color-navy-blue; }
+            }
+            
+            i {
+                font-size: $text__h4;
+                color: $color-navy-blue;
+            }
+            
+            ul {
+                list-style: none;
+            }
+
+            .sh-form-search {
+                flex: 1;
+                max-width: 600px;
+            }
+
+            @include breakpoint(tablet) {
+                display: grid;
+                grid-template-columns: 24px auto 1fr;
+                position: relative;
+                height: 100%;
+                gap: 1rem;
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+
+                .sh-form-search {
+                    order: 9;
+                    grid-column: 1 / -1;
+                    max-width: 100%;
+                }
+            }
+
+            @include breakpoint(mobile) {
+
+                grid-template-columns: 24px 1fr auto;
+                gap: 0.5rem;
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            
+                .sh-nav--alta-cliente,
+                .sh-nav--localizar-pedido,
+                .sh-nav--pedido-rapido {
+                    display: none;
+                }
+
+                .sh-nav--brand {
+                    justify-self: center;
+                }
+
+                .sh-nav--secondary {
+                    gap: 0rem;
+                    span > span,
+                    a > span:not(.sh-badge) {
+                        display: none;
+                    }
+                }
+            }
+    } 
+
 }
 
 .sh-nav--secondary {
     justify-self: end;
     display: flex;
-    margin-right: 1em;
+    gap: 1rem;
     transition: all 0.5s;
+   
     & > div {
         display: flex;
-        max-width: 8rem;
     }
-    span {
-        color: $color-blue;
+
+    span,a {
         display: flex;
+        flex-direction: column;
+        gap: 0.25em;
 
         span {
             transition: all 0.5s;
-            
+            font-size: $text__sm;
+            text-align: center;
         }
+
         i.icon {
             padding: 0 .5em;
         }
+
         img {
             margin: 0 .5em;
+        }
+
+        &:hover {
+            cursor: pointer;
+
+            span:not(.sh-badge) {
+                color: $color-blue;
+            }
         }
     }
 
     @include breakpoint(mobile) {
-        display: none;
+        //display: none;
     }
 }
 
@@ -133,11 +182,13 @@ nav#sh-nav:not(.mm) {
 .sh-nav--basket {
     justify-self: end;
     a {
-        height: 100%;
-        display: block;
+        color: $color-grey;
+        position: relative;
     }
     .sh-badge {
-        margin-left: -0.5em;
+        position: absolute;
+        top: -0.25rem;
+        right: 0;
     }
 }
 
@@ -179,12 +230,6 @@ nav#sh-nav:not(.mm) {
     }
 }
 
-.sh-bottom-nav {
-    margin-top: 5rem;
-    @include breakpoint(tablet) {
-        display: none;
-    }
-}
 
 #sh-nav-desktop {
     position: relative;
@@ -192,25 +237,25 @@ nav#sh-nav:not(.mm) {
     background: white;
 }
 
-.sh-nav-rigth ul{
+.sh-nav-rigth ul {
     margin: 0;
     padding-left: 0;
     display: flex;
+    gap: 1em;
+
     a, span{
         text-decoration: none;
-        font-weight: bold;
-        color: $color-navy-blue;
-        font-size: 18px;
+        text-transform: uppercase;
+        width: 100%;
+        padding: .5em;
         &:hover {
-            color: $color-blue;
+            color: $color-navy-blue;
         }
     } 
     
     li {
         display: block;
         transition-duration: 0.3s;
-	    float: left;
-	    padding: .5rem 1.5rem 1.5rem 1.5rem;
 	    position: relative;
         text-decoration: none;
         color: $color-navy-blue;
@@ -234,11 +279,6 @@ nav#sh-nav:not(.mm) {
             i.icon {
                 padding-left: .25em;
             }
-        }
-
-        &:last-child {
-            display: flex;
-            flex-direction: column;
         }
     }
 
