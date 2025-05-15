@@ -3,9 +3,19 @@
 
 .homepage #sh-hero, .homepage-login #sh-hero {
     height: 66.6vh;
+    background-blend-mode: normal;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+
+    &::before {
+        content: none;
+    }
+    
     @include breakpoint (mobile) {
         height: 100%;
     }
+
     h1 {
         margin-bottom: 1em;
     }
@@ -20,7 +30,7 @@
     }
 }
 
-#sh-hero, #sh-quickorder {
+#sh-hero {
     min-height: 20rem;
     position: relative;
     background-color: $color-gradient-blue;
@@ -33,7 +43,7 @@
     }
   }
   
-  #sh-hero::before, #sh-quickorder::before {
+  #sh-hero::before {
     content: '';
     position: absolute;
     left: 0;
@@ -103,3 +113,14 @@
     margin-top: -20px;
     form.sh-form-search {max-width: 40rem;}
 }
+
+#sh-quickorder {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 100%;
+
+    @include breakpoint (mobile) {
+        background-size: cover;
+    }
+}
+

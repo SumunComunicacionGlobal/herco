@@ -2,16 +2,12 @@
 @use '../core/mixins' as *;
 
 
-#sh-navigation {
-    background: white;
-    border-bottom: 1px solid $color-grey-50;
-    transition: all 0.5s;
-}
-
 #sh-nav-trigger {
     display: none;
     @include breakpoint(tablet) {
         display: block;
+        font-size: $text__h4;
+        color: $color-navy-blue;
     }
 }
 
@@ -49,11 +45,6 @@
                 &:hover { color: $color-navy-blue; }
             }
             
-            i {
-                font-size: $text__h4;
-                color: $color-navy-blue;
-            }
-            
             ul {
                 list-style: none;
             }
@@ -82,9 +73,7 @@
             @include breakpoint(mobile) {
 
                 grid-template-columns: 24px 1fr auto;
-                gap: 0.5rem;
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
+               
             
                 .sh-nav--alta-cliente,
                 .sh-nav--localizar-pedido,
@@ -104,52 +93,58 @@
                     }
                 }
             }
-    } 
-
-}
-
-.sh-nav--secondary {
-    justify-self: end;
-    display: flex;
-    gap: 1rem;
-    transition: all 0.5s;
-   
-    & > div {
-        display: flex;
     }
 
-    span,a {
+    .sh-nav--secondary {
+        justify-self: end;
         display: flex;
-        flex-direction: column;
-        gap: 0.25em;
-
-        span {
-            transition: all 0.5s;
-            font-size: $text__sm;
-            text-align: center;
+        gap: 1rem;
+        transition: all 0.5s;
+    
+        & > div {
+            display: flex;
         }
 
-        i.icon {
-            padding: 0 .5em;
+        i {
+            font-size: $text__h4;
+            color: $color-navy-blue;
         }
 
-        img {
-            margin: 0 .5em;
-        }
+        span,a {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
 
-        &:hover {
-            cursor: pointer;
+            span {
+                transition: all 0.5s;
+                font-size: $text__sm;
+                text-align: center;
+            }
 
-            span:not(.sh-badge) {
-                color: $color-blue;
+            i.icon {
+                padding: 0 .5em;
+            }
+
+            img {
+                margin: 0 .5em;
+            }
+
+            &:hover {
+                cursor: pointer;
+
+                span:not(.sh-badge) {
+                    color: $color-blue;
+                }
             }
         }
+
+        @include breakpoint(mobile) {
+            //display: none;
+        }
     }
 
-    @include breakpoint(mobile) {
-        //display: none;
-    }
 }
+
 
 .sh-nav--secondary__mobile {
     display: grid;
@@ -231,17 +226,19 @@
 }
 
 
-#sh-nav-desktop {
+#sh-nav {
     position: relative;
     z-index: 999;
     background: white;
 }
 
-.sh-nav-rigth ul {
+.sh-bottom-nav ul {
     margin: 0;
     padding-left: 0;
     display: flex;
     gap: 1em;
+    align-items: center;
+    min-height: 3rem;
 
     a, span{
         text-decoration: none;
@@ -259,26 +256,16 @@
 	    position: relative;
         text-decoration: none;
         color: $color-navy-blue;
+        padding-bottom: 0;
+
         &:hover {
             color: $color-blue;
         }
 
-        span:after{
+        span:after {
             content: '\e892';
             font-family: 'herco';
             padding-left: .5rem;
-        }
-
-        .sh-nav--contact {
-            display: flex;
-            flex-direction: column;
-
-            &:first-child small {
-                color: $color-blue;
-            }
-            i.icon {
-                padding-left: .25em;
-            }
         }
     }
 
@@ -299,6 +286,7 @@
         display: block;
         transition: all 0.3s ease;
         transform: translateY(1.5rem);
+        z-index: 1;
         
     }
 
@@ -330,19 +318,8 @@
     }
 }
 
-.sh-nav-products {
-    span {
-        font-weight: 700;
-        color: $color-navy-blue;
-        font-size: 18px;
-        position: absolute;
-        height: 100%;
-        padding: 1.8rem 1em 1em 0;
-
-        &:hover {
-            cursor: pointer;
-        }
-    }
+li.sh-nav-products {
+    flex: 1;
 
     & > ul {
         width: 100%;
@@ -460,80 +437,5 @@
     &.megamenu-active li.hover > ul, &.megamenu-active li.hover > .sh-nav-products--categories__img {
         visibility: visible;
         opacity: 1; 
-    }
-}
-
-#sh-breadcrumbs {
-    text-transform: uppercase;
-    font-size: $text__md;
-    a {
-        color: $color-grey;
-        &:hover {color: $color-navy-blue;}
-    }
-
-    .end-sm {
-        @include breakpoint (mobile) {
-            margin-top: 2em;
-        }
-    }
-
-    ol {
-        padding: 0px;
-        margin-block-end: 0px;
-        margin-block-start: 0px;
-        list-style-image: none;
-        list-style-position: outside;
-        list-style-type: none!important;
-        display: flex;
-        
-        @include breakpoint (mobile) {
-            display: block;
-        }
-
-        li {
-            margin-bottom: .5em;
-        }
-    }
-}
-
-.sh-pagination {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    
-    li {
-        display: inline-block;
-        margin-left: .5em;
-
-        &:first-child {
-            margin-left: 0;
-        }
-    }
-    
-    a {
-        display: block;
-        padding: 1em 1.5em;
-        color: #fff !important;
-        background: $color-blue;
-        text-decoration: none;
-        border-radius: $border-radius;
-
-        &:hover {
-            background: $color-navy-blue;
-        }
-    }
-
-    a.active {
-        background: $color-navy-blue;
-        font-weight: bold;
-    }
-
-    &.mini {
-        margin-top: .5em;
-        a {
-            display: block;
-            padding: .25em .5em;
-            color: #fff;
-        }
     }
 }

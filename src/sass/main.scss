@@ -20,8 +20,8 @@
 @use 'styles/buttons';
 
 // Components
+@use 'components/breadcrumbs';
 @use 'components/navigation';
-@use 'components/mmenu-light';
 @use 'components/hero';
 @use 'components/forms';
 @use 'components/elements';
@@ -29,6 +29,7 @@
 @use 'components/footer';
 @use 'components/scrollable';
 @use 'components/lightbox';
+@use 'components/pagination';
 @use 'components/topbar';
 
 //Pages

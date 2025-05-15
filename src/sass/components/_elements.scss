@@ -178,6 +178,8 @@
 .sh-alert {
   position: relative;
   font-size: 14px;
+  padding: 1em;
+  border-radius: $border-radius;
 
   & i {
     position: absolute;
@@ -205,36 +207,30 @@
 /* set alert type */
 .sh-alert_ {
   &_info {
-  padding: 1em;
-  border-radius: $border-radius;
+  
   background-color: $color-blue;
   color: white;
   }
 
   &_sucess {
-  padding: 1em;
-  border-radius: $border-radius;
+  
   background-color: $color-grass;
   color: white;
   }
 
   &_warning {
-  padding: 1em;
-  border-radius: $border-radius;
-  background-color: $color-yellow;
-  color: black;
+    background-color: $color-yellow;
+    color: black;
 
-   & span {
-     color: black;
-   }
+    & span {
+      color: black;
+    }
   }
 
   &_error {
-  padding: 1em;
-  border-radius: $border-radius;
-  background-color: $color-red-cherry;
-  color: white;
-  }
+    background-color: $color-red-cherry;
+    color: white;
+    }
 }
 
 

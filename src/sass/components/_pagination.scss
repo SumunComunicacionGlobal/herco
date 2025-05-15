@@ -1,0 +1,44 @@
+@use '../core/variables' as *;
+@use '../core/mixins' as *;
+
+.sh-pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+        display: inline-block;
+        margin-left: .5em;
+
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+    
+    a {
+        display: block;
+        padding: 1em 1.5em;
+        color: #fff !important;
+        background: $color-blue;
+        text-decoration: none;
+        border-radius: $border-radius;
+
+        &:hover {
+            background: $color-navy-blue;
+        }
+    }
+
+    a.active {
+        background: $color-navy-blue;
+        font-weight: bold;
+    }
+
+    &.mini {
+        margin-top: .5em;
+        a {
+            display: block;
+            padding: .25em .5em;
+            color: #fff;
+        }
+    }
+}

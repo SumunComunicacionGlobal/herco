@@ -6,9 +6,10 @@
 	background-color: white;
 	position: relative;
 	padding: 1em;
-	border: 1px solid rgba(196,196,196,0.70);
+	
 	box-shadow: 0 2px 4px 0 rgba(48,49,51,0.10);
 	margin-bottom: 1em;
+	
 	.sh-closebtn {
 		position: absolute;
 		right: .6em;
@@ -18,6 +19,10 @@
 		&:hover {
 			cursor: pointer;
 		}
+	}
+
+	&:not([class*="sh-bg__"]){
+		border: 1px solid rgba(196,196,196,0.70);
 	}
 }
 
