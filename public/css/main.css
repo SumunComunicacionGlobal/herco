@@ -1373,6 +1373,7 @@ h3,
 h4,
 h5,
 h6,
+.sh-text__hero,
 .sh-text__h1,
 .sh-text__h2,
 .sh-text__h3,
@@ -1380,6 +1381,8 @@ h6,
 .sh-text__h5 {
   color: #03001b;
   text-transform: uppercase;
+  font-family: "Ciutadella", sans-serif;
+  font-weight: normal;
 }
 
 h2,
@@ -1394,14 +1397,13 @@ h1,
 .sh-text__h1,
 h2,
 .sh-text__h2 {
-  font-family: "Ciutadella", sans-serif;
-  font-weight: bold;
   line-height: 1;
 }
 
 /* text size */
 .sh-text__hero {
   font-size: calc(4.5 * 1em / 1);
+  line-height: 1;
 }
 @media (max-width: 1024px) {
   .sh-text__hero {
@@ -3795,7 +3797,6 @@ li.sh-nav-products.megamenu-active li.hover > ul, li.sh-nav-products.megamenu-ac
 # Core
 --------------------------------------------------------------*/
 .homepage #sh-hero, .homepage-login #sh-hero {
-  height: 66.6vh;
   background-blend-mode: normal;
   background-size: auto;
   background-repeat: no-repeat;
@@ -3810,7 +3811,7 @@ li.sh-nav-products.megamenu-active li.hover > ul, li.sh-nav-products.megamenu-ac
   }
 }
 .homepage #sh-hero h1, .homepage-login #sh-hero h1 {
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 .homepage #sh-hero .sh-icon-w-text, .homepage-login #sh-hero .sh-icon-w-text {
   display: flex;
@@ -3818,6 +3819,37 @@ li.sh-nav-products.megamenu-active li.hover > ul, li.sh-nav-products.megamenu-ac
 .homepage #sh-hero .sh-icon-w-text .icon, .homepage-login #sh-hero .sh-icon-w-text .icon {
   padding-right: 0.5em;
   width: 56px;
+}
+.homepage #sh-hero .hero-homepage .swiper, .homepage-login #sh-hero .hero-homepage .swiper {
+  height: 508px;
+}
+.homepage #sh-hero .hero-homepage .swiper .swiper-wrapper .swiper-slide .swiper-slide-content, .homepage-login #sh-hero .hero-homepage .swiper .swiper-wrapper .swiper-slide .swiper-slide-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 3rem;
+}
+.homepage #sh-hero .hero-homepage .swiper .swiper-wrapper .swiper-slide .swiper-slide-content img, .homepage-login #sh-hero .hero-homepage .swiper .swiper-wrapper .swiper-slide .swiper-slide-content img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 0% 0%;
+  z-index: -1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.homepage #sh-hero .hero-homepage .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .sh-text__hero, .homepage-login #sh-hero .hero-homepage .swiper .swiper-wrapper .swiper-slide .swiper-slide-content .sh-text__hero {
+  max-width: 43.75rem;
+}
+.homepage #sh-hero .hero-homepage > .col-xs-12, .homepage-login #sh-hero .hero-homepage > .col-xs-12 {
+  position: relative;
 }
 
 #sh-hero {
@@ -5343,6 +5375,35 @@ body.hidden-scroll {
   display: block;
   padding: 0.25em 0.5em;
   color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Core
+--------------------------------------------------------------*/
+:root {
+  --swiper-theme-color: #003e90 !important;
+  --swiper-navigation-sides-offset: -8px;
+  --swiper-navigation-size: 72px !important;
+  --swiper-pagination-bullet-size: 1rem;
+  --swiper-pagination-bullet-horizontal-gap: .5rem;
+}
+@media (max-width: 414px) {
+  :root {
+    --swiper-navigation-size: 56px !important;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  background-color: #003e90;
+  color: white !important;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size: 2.5rem;
 }
 
 #sh-topbar {

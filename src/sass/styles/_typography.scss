@@ -27,6 +27,7 @@ h3,
 h4,
 h5,
 h6,
+.sh-text__hero,
 .sh-text__h1,
 .sh-text__h2,
 .sh-text__h3,
@@ -34,6 +35,8 @@ h6,
 .sh-text__h5 {
     color: $color-dark-navy-blue;
     text-transform: uppercase;
+    font-family: $font-heading;
+    font-weight: normal;
 }
 
 h2,
@@ -48,15 +51,13 @@ h1,
 .sh-text__h1,
 h2,
 .sh-text__h2 {
-    font-family: $font-heading;
-    font-weight: bold;
     line-height: $heading-line-height;
 }
 
 /* text size */
 .sh-text__hero {
     font-size: $text__hero;
-
+    line-height: $heading-line-height;
     @include breakpoint(tablet) {
         font-size: $text__h2;
     }

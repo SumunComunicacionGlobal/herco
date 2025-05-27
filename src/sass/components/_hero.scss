@@ -2,7 +2,7 @@
 @use '../core/mixins' as *;
 
 .homepage #sh-hero, .homepage-login #sh-hero {
-    height: 66.6vh;
+    //height: 66.6vh;
     background-blend-mode: normal;
     background-size: auto;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@
     }
 
     h1 {
-        margin-bottom: 1em;
+        margin-bottom: 0.5em;
     }
 
     .sh-icon-w-text {
@@ -28,7 +28,54 @@
             width: 56px;
         }
     }
+
+    .hero-homepage {
+
+        .swiper {
+            height: 508px;
+        
+            .swiper-wrapper .swiper-slide {
+                
+                .swiper-slide-content {
+                    position: relative;
+                    height: 100%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: start;
+                    padding: 3rem;
+                    
+                    img {
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        object-position: 0% 0%;
+                        z-index: -1;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                    }
+
+                    .sh-text__hero {
+                        max-width: 43.75rem;
+                    }
+                
+                }
+                
+                
+            }
+        }
+
+        & > .col-xs-12 {
+            position: relative;
+        }
+        
+    }
 }
+
 
 #sh-hero {
     min-height: 20rem;

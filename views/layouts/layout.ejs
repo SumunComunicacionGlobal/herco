@@ -10,7 +10,9 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="img/low/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    
 </head>
 
 <body class="<%= bodyClass %>">
@@ -22,22 +24,10 @@
     <div class="clearfix"></div>
     <%- include('../partials/footer') %>
     
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/herco.min.js"></script>
-    <script>
     
-        //	Open the menu.
-        document.querySelector('a[href="#menu"]')
-            .addEventListener('click', (evnt) => {
-                menu.open();
-    
-                //	Don't forget to "preventDefault" and to "stopPropagation".
-                evnt.preventDefault();
-                evnt.stopPropagation();
-            });
-    
-    </script>
     
     <script>
         (function() {

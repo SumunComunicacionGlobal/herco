@@ -1,4 +1,4 @@
-<section id="sh-hero" class="sh-bg__light-grey" style="background-image: url(img/low/hero-homepage.jpg);">
+<section id="sh-hero" class="sh-bg__light-grey" style="background-image: url(img/low/hero-bg-homepage.jpg);">
     <div class="container-fluid sh-space__top__md">
         
         <div class="sh-alert sh-box">
@@ -9,15 +9,45 @@
         </div>
 
 
-        <div class="row middle-xs sh-text__white hero">
+        <div class="row middle-xs hero-homepage">
             <div class="col-xs-12 sh-m-bottom">
-                <h1>
-                    <%= title %> SLIDER
-                </h1>
+
+                <!-- Slider main container -->
+                <div class="swiper sh-bg__light-grey sh-box__shadow">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="swiper-slide-content">
+                                <img src="img/low/hero-homepage-slide-1.jpeg" loading="lazy" />
+                                    <h1 class="sh-text__hero">
+                                        <%= title %>
+                                    </h1>
+                                    <a href="#" class="sh-btn-outline sh-btn">Esto es un link</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-slide-content">
+                                <img src="img/low/proteccion-vestuario-category-bg.jpg" loading="lazy" />
+                                    <p class="sh-text__hero">
+                                        Lorem ipsum dolor sit
+                                    </p>
+                                    <a href="#" class="sh-btn-outline sh-btn">Esto es un link</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+                    
+                </div>
+                <!-- navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </div>
 
-        <div class="row middle-xs sh-text__white">
+        <div class="row middle-xs sh-text__white sh-m-bottom__lg">
             <div class="col-xs-12">
                 <div class="row">
                     <div class="col-xs-12 col-sm-4">
