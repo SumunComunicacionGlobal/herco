@@ -18,11 +18,13 @@
     <div class="row">
         <main class="sh-m-bottom__xl col-xs-12 col-sm-8" aria-label="Main content">
             <div>
-                <%- include('partials/component/card-blog') %>
-                <%- include('partials/component/card-blog') %>
-                <%- include('partials/component/card-blog') %>
-                <%- include('partials/component/card-blog') %>
-                <%- include('partials/component/card-blog') %>
+                <% const posts = [
+                    { cardTitle: 'Novedad', cardDate: 'Apolo', cardCategory: '0,35', cardExcerpt: 'Apolo Taco Nylon Avellanado NPC' },
+                ]; %>
+                <% posts.forEach(post => { %>
+                    <%- include('partials/components/card-blog', post) %>
+                <% }) %>
+                
             </div>
             <div class="row center-xs">
                 <div class="sh-m-top__lg col-xs-12">

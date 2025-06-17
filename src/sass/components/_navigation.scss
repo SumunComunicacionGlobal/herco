@@ -1,6 +1,10 @@
 @use '../core/variables' as *;
 @use '../core/mixins' as *;
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 
 #sh-nav-trigger {
     display: none;
@@ -35,7 +39,7 @@
         border-bottom: 1px solid $color-grey-50;
         background: white;
         position: sticky;
-        z-index: 9999;
+        z-index: 9;
         width: 100%;
         top: 0;
         transition: all 0.5s;
@@ -228,8 +232,24 @@
 
 #sh-nav {
     position: relative;
-    z-index: 999;
+    z-index: 99;
     background: white;
+    @include breakpoint(tablet) {
+        display: none;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $color-background;
+        padding-right: 0;
+        padding-left: 0;
+
+        &.sh-nav--is-open {
+            display: block;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
 }
 
 .sh-bottom-nav ul {
@@ -239,16 +259,12 @@
     gap: 1em;
     align-items: center;
     min-height: 3rem;
+    position: relative;
 
-    a, span{
-        text-decoration: none;
-        text-transform: uppercase;
-        width: 100%;
-        padding: .5em;
-        &:hover {
-            color: $color-navy-blue;
-        }
-    } 
+    @include breakpoint(tablet) {
+        flex-direction: column;
+        align-items: start;
+    }
     
     li {
         display: block;
@@ -257,6 +273,19 @@
         text-decoration: none;
         color: $color-navy-blue;
         padding-bottom: 0;
+
+        @include breakpoint(tablet) {
+            border-bottom: 1px solid $color-grey-50;
+            width: 100%;
+            background: #f6f6f6;
+
+            a, span {
+                font-size: 1em;
+                padding: 1rem !important;
+                display: block;
+            }
+            
+        }
 
         &:hover {
             color: $color-blue;
@@ -267,6 +296,26 @@
             font-family: 'herco';
             padding-left: .5rem;
         }
+
+        a, span {
+            text-decoration: none;
+            text-transform: uppercase;
+            width: 100%;
+            padding: .5em;
+                &:hover {
+                    color: $color-navy-blue;
+                }
+        }
+
+        &.back-submenu__toggle {
+            padding: 1rem;
+            &::before {
+                content: '\e848';
+                font-family: 'herco';
+                padding-right: .5rem;
+            }
+
+        }
     }
 
     li:hover {
@@ -275,31 +324,55 @@
     }
 
     li ul {
+        transform: translateY(1.5rem);
         visibility: hidden;
         opacity: 0;
         position: absolute;
-        margin-top: 1.5rem;
+        margin-top: .75rem;
         left: 0;
         min-width: 272px;
         box-shadow: 0 2px 4px 0 rgba(48,49,51,.1);
         border-radius: 2px;
         display: block;
-        transition: all 0.3s ease;
-        transform: translateY(1.5rem);
+        transition: all 0.5s ease;
+        
         z-index: 1;
+
+        @include breakpoint(tablet) {
+            transform: translateX(50rem);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            margin-top: 0;
+        }
         
     }
 
-    li:hover > ul,
-    li ul:hover {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(1px);
+    @media (min-width: 1025px) {
+        li:hover > ul,
+        li ul:hover {
+            visibility: visible;
+            opacity: 1;
+            transform: translateY(1px);
+            
+        }
+        
+    }
+
+    @include breakpoint(tablet) {
+
+        li.submenu-open > ul {
+            visibility: visible;
+            opacity: 1;
+            transform: translateX(0px);
+            transition: all 0.5s ease;
+
+        }
     }
 
     li ul li {
         clear: both;
-        width: 100%;
         background: #f6f6f6;
         text-align: left;
         border-bottom: 1px solid $color-grey-50;
@@ -309,133 +382,86 @@
             border-radius: 2px;
         }
 
-        a {
+        a, span {
             font-size: 1em;
             padding: 1rem;
             display: block;
-            
         }
     }
 }
 
-li.sh-nav-products {
+li.sh-nav-products--OFF {
     flex: 1;
+    position: initial !important;
 
     & > ul {
         width: 100%;
-        height: 66.66vh;
-        position: absolute;
-        top: 4.5rem;
-        margin: 0;
-        padding: 0;
-        border-radius: 2px;
-        visibility: hidden;
-        opacity: 0;
-        transition: all 0.3s ease;
-        transform: translateY(1.5rem);
-    }
+        height: 60dvh;
+        overflow-y: scroll;
 
-    & li {
-        transition-duration: 0.3s;
-        width: 98%;
-        &:hover {
-            cursor: pointer;
-            background-color: white;
-            > a { color: $color-blue;}
-        }
-    }
+        li {
+            width: 33%;
+            position: initial !important;
 
-    &.megamenu-active > ul {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(1px);
-    }
-
-    .sh-nav-products--categories  {
-        width: 33%;
-        overflow-y: auto;
-        overflow-x: hidden;
-        height: 66.66vh;
-        background: #f6f6f6;
-        box-shadow: 0 2px 4px 0 rgba(48,49,51,.1);
-
-        & > li {
-            clear: both;
-            text-align: left;
-            border-bottom: 1px solid rgba(196,196,196,.5);
-            font-weight: 700;
-            padding-bottom: 0;
-
-            a {
-                padding: 1rem 1rem 1rem 1.5rem;
-                display: block;
+            @include breakpoint(tablet) {
                 width: 100%;
+                
+            }
+
+            &:has(ul)::after {
+                //content: '\e849';
+                font-family: 'herco';
+                padding-left: .5rem;
+                
+            }
+
+            ul {
+                left: 33%;
+                width: 33%;
+                top: -1px;
+                margin-top: 0;
+                height: 60dvh;
+                overflow-y: scroll;
+
+                @include breakpoint(tablet) {
+                    left: 0;
+                    width: 100%;
+                    top: 0;
+                }
+
+                li {
+                    position: initial !important;
+                    width: 100%;
+
+                    @include breakpoint(tablet) {
+                        width: 100%;
+                    }
+
+                    ul {
+                        left: 50%;
+                        width: 100%;
+
+                        @include breakpoint(tablet) {
+                            left: 100%;
+                            width: 100%;
+                        }
+
+                        li {
+                            width: 100%;
+                        }
+                    }
+                }
             }
         }
     }
 
-    li > ul {
-        position: absolute;
-        width: 33%;
-        height: 66.66vh;
-        left: 33%;
-        top: 0;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        overflow-y: auto;
+}
+
+li.submenu-open {
+
+    > ul.sh-nav-submenu {
+        height: 90vh;
+        overflow-y: scroll;
         overflow-x: hidden;
-        visibility: hidden;
-        opacity: 0;
-        background: #f6f6f6;
-        box-shadow: 0 2px 4px 0 rgba(48,49,51,.1);
-
-        & > li {
-            border-bottom: 1px solid rgba(196,196,196,.5);
-            font-weight: normal;
-            padding-bottom: 0;
-        }
-
-    }
-
-    li > .sh-nav-products--categories__img {
-        position: absolute;
-        width: 34%;
-        height: 66.66vh;
-        top: 0;
-        right: 0;
-        visibility: hidden;
-        opacity: 0;
-        background: $color-dark-navy-blue;
-        box-shadow: 0 2px 4px 0 rgba(48,49,51,.1);
-        font-weight: normal;
-        display: flex;
-    }
-
-    .sh-nav-products--categories__content {
-        padding: 2em;
-        display: inline-grid;
-        justify-content: center;
-        align-content: center;
-
-        a {
-            color: white;
-            &:hover { color: white; cursor: pointer;}
-        }
-    }
-
-    a {
-        text-decoration: none;
-        color: $color-grey;
-        width: 100%;
-
-        &:hover {
-            color: $color-blue;
-        }
-    }
-
-    &.megamenu-active li.hover > ul, &.megamenu-active li.hover > .sh-nav-products--categories__img {
-        visibility: visible;
-        opacity: 1; 
     }
 }

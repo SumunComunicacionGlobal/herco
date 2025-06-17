@@ -146,9 +146,10 @@
 }
 
 #sh-hero--page {
-    min-height: 12rem;
-    .row{
+      
+    .row.hero {
         padding: 3em 0;
+        min-height: 12rem;
     }
 
     .outlet & {

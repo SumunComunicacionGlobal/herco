@@ -1,0 +1,29 @@
+ <section class="sh-m-top__xl sh-m-bottom__xl container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-lg-3">
+          <p class="sh-divider__header sh-text__h2">Últimas novedades</p>
+          <p>Eventos, noticias corporativas, promociones… Si quieres estar al día de todas las actividades relacionadas con Herco, visita nuestro blog.</p>
+          <div class="sh-m-top__lg sh-m-bottom__lg">
+            <a class="sh-link" href="/busqueda?NOV=SI" rel="nofollow">Ver todas las novedades <i class="icon icon-right-open"></i></a>
+          </div>  
+        </div>
+
+        <div class="col-xs-12 col-lg-9 ">
+          <div class="sh-grid sh-grid--scroll sh-scroll no-scrollbar">
+            <% const products = [
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Panter', productPrice: '39,87', productName: 'Zapato Panter Apolo Napa S3 247' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'ATG', productPrice: '0,35', productName: 'Guante Maxiflex Elite ATG 34-247' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Faru', productPrice: '1,29', productName: 'Barbuquejo' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: '3M', productPrice: '2,29', productName: 'Lorem' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Faru', productPrice: '1,29', productName: 'Guantes' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' }
+          ]; %>
+          <% products.forEach(product => { %>
+              <%- include('../components/card', product) %>
+          <% }) %>
+          </div>
+        </div>
+    </div>
+  </section>

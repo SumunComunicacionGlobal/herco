@@ -1,4 +1,4 @@
-<section id="sh-promos" class="container-fluid sh-m-top__xl sh-m-bottom__xl">
+<section id="sh-promos" class="container-fluid sh-space__top__xxl sh-space__bottom__xxl" style="background-image: url(img/low/bg-promos.svg);">
   <div class="row sh-m-bottom__lg bottom-xs">
     <div class="col-xs-12 col-md-6">
         <p class="sh-text__h5">Promociones HERCO</p>
@@ -56,11 +56,40 @@
       </div>
       <!--end sh-box promo-->
     </div>
-    <div class="col-xs-12 center-xs sh-m-top__lg">
-     
-      
-    </div>
   </div>
   <!--end .row-->
-  
+
+  <div class="row sh-m-top__xl sh-m-bottom center-xs">
+    <div class="col-xs-12 col-md-4  sh-m-bottom__lg">
+      <p class="sh-divider__header sh-text__h2">Productos recomendados HERCO</p>
+    </div>
+  </div>
+
+  <div class="row sh-p-relative sh-m-bottom__xl">
+    <div class="col-xs-12">
+      <div class="swiper-products">
+        <div class="swiper-wrapper">
+          <% const products = [
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Panter', productPrice: '39,87', productName: 'Zapato Panter Apolo Napa S3 247' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'ATG', productPrice: '0,35', productName: 'Guante Maxiflex Elite ATG 34-247' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Faru', productPrice: '1,29', productName: 'Barbuquejo' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: '3M', productPrice: '2,29', productName: 'Lorem' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Faru', productPrice: '1,29', productName: 'Guantes' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+              { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' }
+          ]; %>
+          <% products.forEach(product => { %>
+            <div class="swiper-slide">
+              <%- include('../components/card', product) %>
+            </div>  
+          <% }) %>
+        </div>
+      </div>
+      <!-- navigation buttons -->
+        <div class="swiper-button-prev-products"></div>
+        <div class="swiper-button-next-products"></div>
+      
+    </div>
+  </div>  
 </section>

@@ -45,19 +45,11 @@
 
 }
 
-
 .sh-scroll-arrows {
     display: block;
     position: relative;
     height: 100%;
     width: 100%;
-    @include breakpoint (mobile) {
-        display: none;
-    }
-    
-    @include breakpoint (tablet) {
-        background: none !important;
-    }
 
     &__left, &__right {
         position: absolute;

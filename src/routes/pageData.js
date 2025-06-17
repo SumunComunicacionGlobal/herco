@@ -6,7 +6,7 @@ const pageData = {
   },
   'aviso-legal': {
     pageTitle: 'Aviso Legal - Suministros Herco',
-    bodyClass: 'homepage',
+    bodyClass: '',
     robots: 'noindex, follow'
   },
   blog: {
@@ -16,13 +16,43 @@ const pageData = {
   },
   carrito: {
     pageTitle: 'Blog de Suministros Industriales Herco',
-    bodyClass: 'blog',
+    bodyClass: 'cart',
     robots: 'index, follow'
+  },
+  descargas: {
+    pageTitle: 'Descarga de catálogos offline - Suministros Herco',
+    bodyClass: 'catalogs',
+    robots: 'noindex, follow'
   },
   marcas: {
     pageTitle: 'Marcas - Suministros Herco',
     bodyClass: 'brands',
     robots: 'noindex, follow'
+  },
+  contacto: {
+    pageTitle: 'Contacto - Suministros Herco',
+    bodyClass: 'contact',
+    robots: 'index, follow'
+  },
+  category: {
+    pageTitle: 'Category name - Suministros Herco',
+    bodyClass: 'category',
+    robots: 'index, follow'
+  },
+  subcategory: {
+    pageTitle: 'Subcategory name - Suministros Herco',
+    bodyClass: 'subcategory',
+    robots: 'index, follow'
+  },
+  carrito: {
+    pageTitle: 'Carrito - Suministros Herco',
+    bodyClass: 'cart',
+    robots: 'noindex'
+  },
+  checkout: {
+    pageTitle: 'Checkout - Suministros Herco',
+    bodyClass: 'checkout',
+    robots: 'noindex'
   }
   // Agrega más vistas aquí según sea necesario
 };

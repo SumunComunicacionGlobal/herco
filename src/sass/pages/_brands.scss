@@ -2,6 +2,7 @@
 @use '../core/mixins' as *;
 
 .list-brands {
+    margin: 0;
     li {
         display: inline-block;
         white-space: nowrap;

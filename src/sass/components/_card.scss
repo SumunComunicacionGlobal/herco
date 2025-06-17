@@ -18,11 +18,6 @@
     transition: 0.2s;
   }
 
-  &:hover .sh-btn {
-    background-color: $color-navy-blue;
-    border-color: $color-navy-blue;
-  }
-
   &:hover .sh-card__switch__text {
     opacity: 1;
     transition: .4s;
@@ -198,6 +193,7 @@
 
 .sh-card-blog__mini  {
   display: flex;
+  padding: 0;
 
   @include breakpoint (mobile) {
     display: block;

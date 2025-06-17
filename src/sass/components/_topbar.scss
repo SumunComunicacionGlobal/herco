@@ -1,6 +1,17 @@
+@use '../core/variables' as *;
+
 #sh-topbar {
     height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        transition: color 0.3s ease-in-out;
+        &:hover {
+            color: $color-dark-navy-blue;
+        }
+    }
 }

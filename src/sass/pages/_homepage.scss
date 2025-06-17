@@ -44,56 +44,60 @@ section::after {
     }
 }
 
-#sh-promos .sh-box {
-    &:hover {
-        color: white;
-        z-index:1;
-        img.promo {
-            visibility: hidden;
-            display: none;
-        }
-
-        .promo-content {
-            grid-template-columns: 1fr;
-            
-        }
-        
-        h3 {
-            
+#sh-promos {
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    .sh-box {
+        &:hover {
             color: white;
-            @include breakpoint (xsmobile) {
-                font-size: 1rem;
+            z-index:1;
+            img.promo {
+                visibility: hidden;
+                display: none;
+            }
+
+            .promo-content {
+                grid-template-columns: 1fr;
+                
             }
             
-        }
-        a {
-            color: white;
-            z-index:2;
-        }
+            h3 {
+                
+                color: white;
+                @include breakpoint (xsmobile) {
+                    font-size: 1rem;
+                }
+                
+            }
+            a {
+                color: white;
+                z-index:2;
+            }
 
-        .promo-hover-content {
-          visibility: visible;
-          display: block;
-          //position: absolute;
+            .promo-hover-content {
+            visibility: visible;
+            display: block;
+            //position: absolute;
+            }
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            top:0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background-color: $color-navy-blue;
+            transform-origin:left;
+            transition:width 0.3s ease;
+            z-index:-1;
+            border-radius: $border-radius;
+        }
+        
+        &:hover::after {
+            width: 100%;
         }
     }
-    &::after {
-        position: absolute;
-        content: '';
-        top:0;
-        left: 0;
-        width: 0;
-        height: 100%;
-        background-color: $color-navy-blue;
-        transform-origin:left;
-        transition:width 0.3s ease;
-        z-index:-1;
-        border-radius: $border-radius;
-      }
-      
-      &:hover::after {
-        width: 100%;
-      }
 }
 
 #sh-quickorder {
@@ -156,8 +160,14 @@ section::after {
     
 } 
 
+#sh-downloads {
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
-#sh-brands, #sh-community, #sh-text-subcategory, #sh-cross-selling {
+
+#sh-brands, #sh-seo-text-home, #sh-text-subcategory, #sh-cross-selling {
     background: white;
     padding: 5em 0;
     border-top: 1px solid $color-grey-50;
@@ -169,6 +179,7 @@ section::after {
     .sh-overlay {
         min-height: 240px;
         max-height: 320px;
+        overflow: hidden;
         .sh-overlay-content {
             padding: 1em 2em 2em 2em;
             justify-content: start;
@@ -259,10 +270,17 @@ section::after {
 #sh-testimonials {
     .readmore {
         color: $color-blue;
-      }
-      .showmore-content {
+    }
+    .showmore-content {
         display: none;
-      }
+    }
+    .swiper-testimonials .swiper-slide {
+        height: auto;
+
+        .sh-box {
+            height: 100%;
+        }
+    }
 }
 
 .testimonial-author {

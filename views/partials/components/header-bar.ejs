@@ -1,0 +1,10 @@
+<div id="header-bar" class="sh-m-bottom container-fluid">
+    <div>
+        <form class="sh-form-search" action="./buscar">
+            <div class="autocomplete" style="width: 100%;">
+                <input class="sh-input" type="text" placeholder="<%= placeholder %>" autocomplete="off" name="search" id="search" onkeypress="return PulsarTeclaBusqueda(event);" onkeydown="return PulsarTeclaBusqueda2(event);">
+            </div>
+            <button class="sh-btn__danger" type="button" onclick="Buscar();" id="btnBuscar"></button>
+        </form>
+    </div>
+</div>

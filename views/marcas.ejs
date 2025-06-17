@@ -1,25 +1,9 @@
-<!-- Include hero.ejs -->
 <%- include('partials/hero-subcategory', { title: 'Marcas', bgimg: 'bg-proteccion-vestuario.jpg' }) %>
-
-<div class="container-fluid">
-    <div id="header-bar" class="sh-m-bottom">
-        <div>
-            <form class="sh-form-search" action="./buscar">
-                <input class="sh-input" type="text" placeholder="Buscar marcas" name="search">
-                <button class="sh-btn__danger" type="submit"></button>
-            </form>
-        </div>
-        <div id="sh-breadcrumbs" class="sh-m-top__lg between-xs middle-xs dflex">
-            <partial src="/sections/breadcrumbs.html" category-page="Marcas"></partial>
-            <div class="end-sm">
-                <span>MARCAS: 20/<strong>1500</strong></span>
-            </div>
-        </div>
-    </div>
-</div>
+<%- include('partials/components/header-bar', { placeholder: 'Buscar marcas...' }) %>
+<%- include('partials/components/breadcrumbs', { secondLevel: 'Marcas', thirdLevel: null }) %>
 
 <div id="sh-list-brands" class="container-fluid">
-    <div class="row">
+    <div class="row bottom-xs">
         <ul class="list-brands col-xs-12 col-md-9">
             <li><a href="#">Todas</a></li>
             <li><a href="#">A</a></li>
@@ -51,9 +35,12 @@
             <li><a href="#">Z</a></li>
         </ul>
         <ul class="sh-pagination mini col-xs-12 col-md-3 end-md">
-            <li><a href="/blog/page/1/" class="active">1</a></li>
-            <li><a href="/blog/page/2/">2</a></li>
-            <li><a href="/blog/page/3/">3</a></li>
+            <div class="end-sm sh-m-bottom">
+                <small>MARCAS: 20/<strong>1500</strong></small>
+            </div>
+            <li><a href="?page=1" class="active">1</a></li>
+            <li><a href="?page=2">2</a></li>
+            <li><a href="?page=3">3</a></li>
             <li><a href="#"><i class="icon icon-right-open"></i></a></li>
         </ul>
     </div>
@@ -61,26 +48,22 @@
 
 <main class="sh-m-bottom__xl sh-m-top__lg container-fluid" aria-label="Main content">
     <div class="row">
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
-        <partial src="card-brand.html" brand-name="3M"></partial>
+        <% const brands = [
+              { brandName: '3M', brandTotal: '1500' },
+              { brandName: 'Apolo', brandTotal: '1500' },
+              { brandName: 'Faru', brandTotal: '1500' },
+              { brandName: 'Panter', brandTotal: '1500' },
+              { brandName: 'ATG', brandTotal: '1500' },
+              { brandName: 'Cofra', brandTotal: '1500' },
+              { brandName: 'Delta Plus', brandTotal: '1500' },
+              { brandName: 'Juba', brandTotal: '1500' },
+              { brandName: 'Lafont', brandTotal: '1500' },
+              { brandName: 'MCR Safety', brandTotal: '1500' },
+              { brandName: 'Sioen', brandTotal: '1500' }
+          ]; %>
+          <% brands.forEach(brand => { %>
+              <%- include('partials/components/card-brand', brand) %>
+          <% }) %>
     </div>
     <div class="row center-xs">
         <div class="sh-m-top__lg col-xs-12 col-sm-6">
@@ -94,40 +77,12 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-md-6">
-                <h2>Lorem ipsum dolor sit</h2>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                    fugit,
-                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                    quisquam
-                    est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                    eius
-                    modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                    velit
-                    esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                    pariatur?
-                </p>
+                <h2>Trabajamos con las principales marcas</h2>
+                <p>En Suministros Herco tenemos como objetivo primordial que puedas encontrar productos de calidad a precios competitivos. Por eso, trabajamos con los principales fabricantes del sector para garantizar una compra satisfactoria. Sabemos que lo más importante para tu trabajo es contar con suministros y herramientas duraderas, seguras, con las que puedas desarrollar tus tareas de forma eficiente. La experiencia de empresas que se dedican al 100% en la fabricación de productos profesionales es el principal requisito para que en Herco les demos nuestra confianza y pongamos a tu disposición su variedad de productos. Nosotros queremos ser un referente para grandes empresas, autónomos y PYMES a la hora de hacer sus compras. Por eso, queremos ofrecerte variedad, calidad y la garantía de que en cada uno de los productos que nos compres, hay un gran fabricante detrás.</p>
             </div>
             <div class="col-xs-12 col-md-6">
-                <h2>Lorem ipsum dolor sit</h2>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                    fugit,
-                    sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                    quisquam
-                    est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                    eius
-                    modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
-                <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-                    aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate
-                    velit
-                    esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
-                    pariatur?
-                </p>
+                <h2>Más de 300 marcas y miles de productos</h2>
+                <p>Calzado y vestuario, herramienta manual y eléctrica, tornillería y soldadura… No importa lo que necesites, seguro que puedes encontrarlo en Suministros Herco. Tenemos miles de productos de más de 300 marcas. Gracias a esta amplia gama que vas a encontrar en nuestra tienda, podemos ofrecer un catálogo de suministros industriales que satisfacen las necesidades de cualquier sector. La gran mayoría de los fabricantes con los que trabajamos en Suministros Herco están especializados en productos indicados para profesionales. Nuestros clientes también son particulares y, aunque sus compras sean para desarrollar una actividad en un entorno doméstico, queremos ser tu tienda de suministros de confianza. Poder garantizarte que lo que compras ha sido diseñado con unas características y unos materiales que se ajustan a lo que necesitas.</p>
             </div>
         </div>
     </div>

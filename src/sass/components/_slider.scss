@@ -3,7 +3,7 @@
 
 :root {
     --swiper-theme-color: #003e90 !important;
-    --swiper-navigation-sides-offset: -8px;
+    --swiper-navigation-sides-offset: -1rem;
     --swiper-navigation-size: 72px !important;
     --swiper-pagination-bullet-size: 1rem;
     --swiper-pagination-bullet-horizontal-gap: .5rem;
@@ -14,9 +14,10 @@
     }
 }
 
-.swiper {
+.swiper, .swiper-products, .swiper-testimonials {
     width: 100%;
     height: 100%;
+
 }
 
 .swiper-button-next, .swiper-button-prev {
@@ -26,6 +27,75 @@
     &::after {
         font-size: 2.5rem;
     }
+}
+
+.swiper-products, .swiper-testimonials {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
+
+.swiper-button-prev-products,
+.swiper-button-next-products,
+.swiper-button-prev-testimonials,
+.swiper-button-next-testimonials,
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-blue;
+    color: white !important;
+
+    &::after {
+        font-family: swiper-icons;
+        font-size: 1.5rem;
+        text-transform: none !important;
+        letter-spacing: 0;
+        font-variant: initial;
+        line-height: 1;
+    }
+
+    
+}
+
+.swiper-button-prev-products,
+.swiper-button-prev-testimonials { 
+    left: var(--swiper-navigation-sides-offset, 10px);
+    right: auto;
+
+    &::after {
+        content: 'prev';
+    }
+}
+.swiper-button-next-products,
+.swiper-button-next-testimonials {
+    right: var(--swiper-navigation-sides-offset, 10px);
+    left: auto;
+    &::after {
+        content: 'next';
+    }
+ }
+
+ .swiper-button-next-products.swiper-button-disabled,
+ .swiper-button-prev-products.swiper-button-disabled {
+    opacity: 0.35;
+    pointer-events: none;
+    cursor: auto;
 }
 
 

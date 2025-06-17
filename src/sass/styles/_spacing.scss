@@ -69,6 +69,26 @@
     padding-top: calc(4 * #{$text-base-size});
 }
 
+.sh-space__bottom {
+    padding-bottom: calc(1 * #{$text-base-size});
+}
+
+.sh-space__bottom__md {
+    padding-bottom: calc(1.5 * #{$text-base-size});
+}
+
+.sh-space__bottom__lg {
+    padding-bottom: calc(2 * #{$text-base-size});
+}
+
+.sh-space__bottom__xl {
+    padding-bottom: calc(3 * #{$text-base-size});
+}
+
+.sh-space__bottom__xxl {
+    padding-bottom: calc(4 * #{$text-base-size});
+}
+
 .sh-no__margin {
     margin: 0;
 }
