@@ -75,7 +75,7 @@ Estructura del proyecto
 
 #### Estructura
 
-''' sh
+```sh
 herco/
 │
 ├── app.js
@@ -96,8 +96,7 @@ herco/
     │   ├── components/
     │   └── sections/
     └── *.ejs 
-'''
-
+```
 
 #### Detalles
 
