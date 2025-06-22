@@ -1,19 +1,18 @@
-[![Build Status](https://travis-ci.org/Automattic/_s.svg?branch=master)](https://travis-ci.org/Automattic/_s)
 
-larra
+
+Suministros Herco Ecommerce
 ===
 
-Hi. I'm a starter theme called `larra`. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Este proyecto es un ecommerce para la empresa Suministros Herco, especializado en la venta de suministros industriales. El desarrollo está realizado en Node.js usando Express, EJS para plantillas, y una arquitectura modular y escalable.
 
-The ultra-minimal SCSS might make me look like theme tartare but that means less stuff to get in your way when you're designing your awesome theme. Here are some of the other more interesting things you'll find here:
+* Node.js y Express: Backend y servidor web.
+* EJS: Motor de plantillas para renderizado dinámico del HTML.
+* SASS (SCSS): Preprocesador CSS para estilos avanzados.
+* jQuery: Utilizado para la interacción en el frontend.
+* Swiper.js: Carruseles y sliders.
+* Font customizada: Iconos propios de Herco.
+* Arquitectura modular: Separación clara entre vistas, rutas, scripts y estilos.
 
-* A modern workflow with a pre-made command-line interface to turn your project into a more pleasant experience.
-* A just right amount of lean, well-commented, modern, HTML5 templates.
-* Some small tweaks in `inc/template-functions.php` that can improve your theming experience.
-* A script at `js/navigation.js` that makes your menu a toggled dropdown on small screens (like your phone), ready for CSS artistry. It's enqueued in `functions.php`.
-* Smartly organized starter SASS in `sass/style.scss` that will help you to quickly get your design off the ground.
-* Full support for `WooCommerce plugin` integration with hooks in `inc/smn_woocommerce.php`, styling override woocommerce.css with product gallery features (zoom, swipe, lightbox) enabled.
-* Licensed under GPLv2 or later. :) Use it to make something cool.
 
 Installation
 ---------------
@@ -48,12 +47,6 @@ $ npm install
 - `npm run dev` : Run watch and sync to develop your awesome theme.
 
 
-### Theme.json
-
-Recuerda que `larra` es un starter theme para versiones superiores a 6.0 de WordPress y trae incorporado el archivo `theme.json` para poder configurar, dar estilos y muchas mas opciones. Consulta en: [Global Settings & Styles (theme.json)](https://developer.wordpress.org/block-editor/how-to-guides/themes/global-settings-and-styles/).
-
-Sigue estos sencillos pasos para empezar a configurar el editor de tu theme y las correspondencias en el frontend.
-
 #### Settings
 
 1. Configura las paletas de color, mejor si solo cambias el hexadecimal, en caso de que necesites más colores sigue la nomenclatura, `primary-20` o `secondary-90`por ejemplo.
@@ -63,6 +56,57 @@ Sigue estos sencillos pasos para empezar a configurar el editor de tu theme y la
 6. Optionally, search for `smn_` to capture all the functions names and replace with: `project_name_`.
 
 
-Now you're ready to go! The next step is easy to say, but harder to do: make an awesome WordPress theme. :)
+Estructura del proyecto
+---------------
 
-Good luck!
+#### Estructura
+
+herco/
+│
+├── app.js
+├── package.json
+├── public/
+│   ├── css/
+│   ├── font/
+│   ├── img/
+│   ├── js/
+│   └── svg/
+├── src/
+│   ├── js/
+│   ├── routes/
+│   └── sass/
+└── views/
+    ├── layouts/
+    ├── partials/
+    │   ├── components/
+    │   └── sections/
+    └── *.ejs
+
+#### Detalles
+
+* /public: Archivos estáticos (CSS, JS minificado, fuentes, imágenes, SVG).
+* /src/js: Scripts JavaScript de la aplicación (no minificados).
+* /src/sass: Estilos SCSS organizados por componentes y utilidades.
+* /src/routes: Rutas y lógica de generación de datos para las vistas.
+* /views: Plantillas EJS.
+* /layouts: Plantillas base (estructura HTML principal).
+* /partials/components: Componentes reutilizables (breadcrumbs, header-bar, cards, etc).
+* /partials/sections: Secciones de página (hero, promos, brands, etc).
+* /*.ejs: Vistas principales (index, category, product, etc).
+
+#### ¿Qué hace cada carpeta de src?
+
+**/src/routes:**
+* generateRoutes.js: Genera rutas dinámicas para cada vista EJS.
+* main.routers.js: (Si existe) Rutas adicionales o personalizadas.
+* pageData.js: Datos y metadatos para cada página (título, robots, etc).
+
+**/src/js:**
++ Scripts de interacción y lógica de frontend.
+
+/src/sass:
+Estilos SCSS organizados en:
+
+core: Variables, mixins, helpers.
+components: Estilos de componentes (botones, navegación, etc).
+pages: Estilos específicos de páginas.
