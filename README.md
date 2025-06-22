@@ -14,46 +14,60 @@ Este proyecto es un ecommerce para la empresa Suministros Herco, especializado e
 * Arquitectura modular: Separación clara entre vistas, rutas, scripts y estilos.
 
 
-Installation
+Instalación
 ---------------
 
 ### Requirements
 
-`larra` requires the following dependencies:
+`herco` requires the following dependencies:
 
-- [Node.js](https://nodejs.org/)
-- [Composer](https://getcomposer.org/) Just for Hybrid Themes
+- [Node.js](https://nodejs.org/) versión recomendada: 18.x o superior
+- [npm](https://www.npmjs.com/) gestor de paquetes de Node.js
 
 
 ### Setup
 
-To start using all the tools that come with `larra`  you need to install the necessary Node.js and Composer dependencies :
+Clona el repositorio
 
 ```sh
-$ npm install
+git clone https://github.com/SumunComunicacionGlobal/herco.git
+cd herco
 ```
 
-### Available CLI commands
+Instala las dependencias
 
-`larra` comes packed with CLI commands tailored for WordPress theme development :
+```sh
+npm install
+```
 
-- `composer lint:wpcs` : checks all PHP files against [PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/).
-- `composer lint:php` : checks all PHP files for syntax errors.
-- `npm run compile:css` : compiles SASS files to css.
-- `npm run compile:js` : compiles JS files to min.js.
-- `npm run watch` : watches all SASS files and recompiles them to css when they change.
-- `npm run bundle` : generates a .zip archive for distribution, excluding development and system files.
-- `npm run sync` : Browser syncs listen all files. Maybe you have to change the port. By default: `localhost:8888/larra/`.
-- `npm run dev` : Run watch and sync to develop your awesome theme.
+Arranca el servidor en modo desarrollo:
+
+```sh
+npm run dev
+```
+
+Esto lanzará en paralelo:
+
+* El servidor Express con recarga automática (nodemon)
+* La compilación y recarga de los estilos SASS
+* La compilación y recarga de los scripts JS
+El sitio estará disponible en http://localhost:3001 (o el puerto que indiques en app.js).
+
+### Comandos CLI disponibles
+
+`hero` comes packed with CLI commands tailored for WordPress theme development :
+
+- `npm run dev` : Ejecuta el entorno de desarrollo completo (servidor, SASS y JS en modo watch).
+- `npm run watch:nodemon` : Solo lanza el servidor Express con recarga automática.
+- `npm run watch:sass` : Compila los archivos SASS/SCSS y observa cambios para recargar el CSS automáticamente.
+- `npm run watch:js` : Observa los archivos JS en js y ejecuta la tarea de minificación cuando haya cambios.
+- `npm run compile:js` : Minifica todos los archivos JS de js en un único archivo herco.min.js.
 
 
-#### Settings
-
-1. Configura las paletas de color, mejor si solo cambias el hexadecimal, en caso de que necesites más colores sigue la nomenclatura, `primary-20` o `secondary-90`por ejemplo.
-2. Personaliza el `border-radius`, `box-shadow`, paleta de color de grises (solo cambia el hexadecimal), `layout`y lo que consideres necesario.
-4. Search for `larra` (in uppercase) to capture constants and replace with: `Nombre_proyecto`.
-5. Search in package.json for `sumun` to to change the theme name: `project-name`.
-6. Optionally, search for `smn_` to capture all the functions names and replace with: `project_name_`.
+Notas :
+* Los archivos estáticos (CSS, JS minificado, imágenes, fuentes) se sirven desde la carpeta public.
+* El código fuente de los estilos y scripts originales está en sass y js.
+* Las vistas EJS están en la carpeta views. 
 
 
 Estructura del proyecto
@@ -61,6 +75,7 @@ Estructura del proyecto
 
 #### Estructura
 
+''' sh
 herco/
 │
 ├── app.js
@@ -80,7 +95,9 @@ herco/
     ├── partials/
     │   ├── components/
     │   └── sections/
-    └── *.ejs
+    └── *.ejs 
+'''
+
 
 #### Detalles
 
