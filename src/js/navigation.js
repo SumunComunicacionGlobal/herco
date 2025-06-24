@@ -116,50 +116,26 @@ $('#closeSaveCart').click(function (){
   $('.dropdown-content').slideToggle( 300 );
 });
 
-$('#sh-nav-trigger').click(function () {
-  $('#sh-nav').toggleClass('sh-nav--is-open');
-  $('body').toggleClass('no-scroll');
-});
+function wrapSubmenuItemsDesktop() {
+  if (window.innerWidth >= 1025) {
+    $('ul.sh-nav-submenu').each(function () {
+      // Evita envolver dos veces
+      if (!$(this).children('.sh-nav-submenu--container').length) {
+        // Selecciona todos los li hijos directos
+        var $lis = $(this).children('li');
+        if ($lis.length) {
+          $lis.wrapAll('<div class="sh-nav-submenu--container"></div>');
+        }
+      }
+    });
+  } else {
+    // Si bajas de 1025px, elimina el contenedor para evitar conflictos con mmenu
+    $('ul.sh-nav-submenu .sh-nav-submenu--container').each(function () {
+      $(this).children('li').unwrap();
+    });
+  }
+}
 
-$(document).ready(function () {
-  // Añade el botón de toggle si no existe
-  $('a.sh-nav-has-submenu, span.sh-nav-has-submenu').each(function () {
-    var $link = $(this);
-    if ($link.next('.submenu-toggle-btn').length === 0) {
-      $link.after('<button class="submenu-toggle-btn" aria-expanded="false" aria-label="Abrir submenú" type="button"><i class="icon icon-right-open"></i></button>');
-    }
-  });
-
-  // Evento para abrir/cerrar el submenú al hacer click en el botón
-  $('.submenu-toggle-btn').on('click', function (e) {
-    e.preventDefault();
-    var $btn = $(this);
-    var $parentLi = $btn.closest('li');
-    var $submenu = $parentLi.children('ul').first();
-
-    // Alterna la clase para mostrar/ocultar el submenú
-    $parentLi.toggleClass('submenu-open');
-
-    // Alterna el aria-expanded
-    var expanded = $btn.attr('aria-expanded') === 'true';
-    $btn.attr('aria-expanded', !expanded);
-    $btn.toggleClass('open');
-
-    // Añade el título solo si no existe ya
-    if ($submenu.length && $submenu.find('.back-submenu__toggle').length === 0) {
-      // Obtiene el texto del enlace padre
-      var label = $parentLi.children('a, span').first().text();
-      // Crea el <li> de título
-      var $titleLi = $('<li class="back-submenu__toggle">' + label + '</li>');
-      // Al hacer click en el título, cierra el submenú y elimina el título
-      $titleLi.on('click', function () {
-        $parentLi.removeClass('submenu-open');
-        setTimeout(function () {
-          $titleLi.remove();
-        }, 300); // igual que la transición CSS si tienes
-      });
-      // Inserta el <li> al principio del submenú
-      $submenu.prepend($titleLi);
-    }
-  });
-});
+// Ejecuta al cargar y al redimensionar
+$(document).ready(wrapSubmenuItemsDesktop);
+$(window).on('resize', wrapSubmenuItemsDesktop);

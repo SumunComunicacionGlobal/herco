@@ -42,11 +42,11 @@
         </div>
     </div>
 
-    <nav id="sh-nav" class="sh-bottom-nav container-fluid">   
+    <nav id="menu" class="container-fluid" data-sh-nav-title="">
         <ul>
             <li class="sh-nav-products">
-                <span class="sh-nav-has-submenu">Productos</span>
-                <ul class="sh-nav-submenu">
+                <span class="sh-nav-has-submenu"><i class="icon icon-menu"></i> Productos</span>
+                <ul class="sh-nav-submenu" id="category_header_menuproductosmobile">
                     <li>
                         <a class="sh-nav-has-submenu" href="/category">Protección y vestuario</a>
                         <ul class="sh-nav-submenu">
@@ -128,41 +128,7 @@
             <li><a href="./blog">Blog</a></li>
             <li><a href="./contacto" title="Contactar con Herco">Contactar</a></li> 
 
-            <li><span>Catálogos</span>
-                <ul>
-                    <li><span>Catálogo 1</span>
-                        <ul>
-                            <li><a href="#">Lidership</a></li>
-                            <li><a href="#">History</a></li>
-                            <li><a href="#">Locations</a></li>
-                            <li><a href="#">Careers</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Catálogo 2</span>
-                        <ul>
-                            <li><a href="#">Undergraduate</a></li>
-                            <li><a href="#">Masters</a></li>
-                            <li><a href="#">International</a></li>
-                            <li><a href="#">Online</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Catálogo 3</span>
-                        <ul>
-                            <li><a href="#">Undergraduate research</a></li>
-                            <li><a href="#">Masters research</a></li>
-                            <li><a href="#">Funding</a></li>
-                        </ul>
-                    </li>
-                    <li><span>Catálogo 4</span>
-                        <ul>
-                            <li><a href="#">Sub something</a></li>
-                            <li><a href="#">Sub something</a></li>
-                            <li><a href="#">Sub something</a></li>
-                            <li><a href="#">Sub something</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
+            
             <li><span>Información corporativa</span>
                 <ul>
                     <li><a href="./mision-vision-y-valores.html" title="">Misión, visión y valores</a></li>
@@ -177,149 +143,23 @@
         </ul>
 
         <div class="sh-nav--secondary__mobile">
-            <div>
-                <i class="icon icon-location"></i>
-                <a href="./find-order.html" title="Localizar pedido" rel="nofollow">Localizar pedido</a>
+            <div class="sh-nav--alta-cliente">
+                <span class="link-ofuscado" onclick="location.href='./login.html'">
+                    <i class="icon icon-briefcase"></i><span> Alta cliente</span>
+                </span>
             </div>
-            <div>
-                <i class="icon icon-tag"></i>
-                <a href="./quick-order.html" title="Pedido rápido" rel="nofollow">Pedido rápido</a>
+            <div class="sh-nav--localizar-pedido">
+                <span class="link-ofuscado" onclick="location.href='./find-order.html'">
+                    <i class="icon icon-location"></i><span> Localizar pedido</span>
+                </span>
             </div>
-            <div class="sh-nav--avatar">
-                <i class="icon icon-user"></i>
-                <img src="img/low/avatar.png" alt="Nombre Apellido">
-                <a href="./login.html" title="Iniciar sesión" rel="nofollow">Iniciar sesión</a>
+            <div class="sh-nav--pedido-rapido">
+                <span class="link-ofuscado" onclick="location.href='./quick-order.html'">
+                    <i class="icon icon-tag"></i><span>Pedido rápido</span>
+                </span>
             </div>
         </div>
 
     </nav>
-     <!-- BACKUP Desktop NAVIGATION 
-    <nav id="sh-nav-desktop" class="row between-xs">
 
-            <div class="sh-nav-products">
-                <span><i class="icon icon-menu"></i> Productos</span>
-                <ul>
-                    <div class="sh-nav-products--categories">
-                        <li><a href="./category.html" title="Protección y vestuario">Protección y vestuario</a>
-                            <ul>
-                                <li><a href="./subcategory.html" title="Gafas de protección">Gafas de protección</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                                <li><a href="#">Subcategoria</a></li>
-                            </ul>
-                            <div class="sh-nav-products--categories__img" >
-                                <div class="sh-nav-products--categories__content sh-text__white">
-                                    <img src="img/low/promo.png">
-                                    <p class="sh-text__h6">Protección y vestuario</p>
-                                    <strong class="sh-text__h3 sh-m-bottom__md">Título de la oferta o producto destacado</strong>
-                                    <a class="sh-btn" href="#" title="">Saber más</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#">Categoria 2</a>
-                            <ul>
-                                <li><a href="#">Subcategoria 2</a></li>
-                                <li><a href="#">Subcategoria 2</a></li>
-                            </ul>
-                            <div class="sh-nav-products--categories__img">
-                                <div class="sh-nav-products--categories__content sh-text__white" style="background: linear-gradient(rgba(3, 0, 27, 0.5), rgba(3, 0, 27, 0.5)), url(./img/low/promo-megamenu.jpg) center/cover no-repeat">
-                                    <p class="sh-text__h6">Categoría 2</p>
-                                    <strong class="sh-text__h3 sh-m-bottom__md">Título de la oferta o producto destacado</strong>
-                                    <a class="sh-btn" href="#" title="">Saber más</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#">Categoria 3</a>
-                            <ul>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                                <li><a href="#">Subcategoria 3</a></li>
-                            </ul>
-                            <div class="sh-nav-products--categories__img">
-                                <div class="sh-nav-products--categories__content sh-text__white">
-                                    <p class="sh-text__h6">Categoría 3</p>
-                                    <strong class="sh-text__h3 sh-m-bottom__md">Título de la oferta o producto destacado</strong>
-                                    <a class="sh-btn" href="#" title="">Saber más</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#">Categoria 4</a>
-                            <ul>
-                                <li><a href="#">Subcategoria 4</a></li>
-                                <li><a href="#">Subcategoria 4</a></li>
-                                <li><a href="#">Subcategoria 4</a></li>
-                                <li><a href="#">Subcategoria 4</a></li>
-                                <li><a href="#">Subcategoria 4</a></li>
-                                <li><a href="#">Subcategoria 4</a></li>
-                            </ul>
-                            <div class="sh-nav-products--categories__img">
-                                <div class="sh-nav-products--categories__content sh-text__white" style="background: linear-gradient(rgba(3, 0, 27, 0.5), rgba(3, 0, 27, 0.5)), url(./img/low/promo-megamenu.jpg) center/cover no-repeat">
-                                    <img src="img/low/promo.png">
-                                    <p class="sh-text__h6">Categoría 4</p>
-                                    <strong class="sh-text__h3 sh-m-bottom__md">Título de la oferta o producto destacado</strong>
-                                    <a class="sh-btn" href="#" title="">Saber más</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li><a href="#">Categoria 5</a>
-                            <ul>
-                                <li><a href="#">Subcategoria 5</a></li>
-                                <li><a href="#">Subcategoria 5</a></li>
-                                <li><a href="#">Subcategoria 5</a></li>
-                                <li><a href="#">Subcategoria 5</a></li>
-                                <li><a href="#">Subcategoria 5</a></li>
-                                <li><a href="#">Subcategoria 5</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Categoria 6</a></li>
-                        <li><a href="#">Categoria 7</a></li>
-                        <li><a href="#">Categoria 8</a></li>
-                        <li><a href="#">Categoria 9</a></li>
-                        <li><a href="#">Categoria 10</a></li>
-                        <li><a href="#">Categoria 11</a></li>
-                        <li><a href="#">Categoria 12</a></li>
-                        <li><a href="#">Categoria 13</a></li>
-                        <li><a href="#">Categoria 14</a></li>
-                        <li><a href="#">Categoria 15...</a></li>
-                    </div>
-                </ul>
-            </div>
-
-            <div class="sh-nav-rigth">
-                
-            </div>
-        </nav>  -->
 </header>

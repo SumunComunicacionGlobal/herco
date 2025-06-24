@@ -21,9 +21,7 @@ body.no-scroll {
     transition: all 0.3s;
 }
 
-.scrollDown .sh-nav--secondary {
 
-}
 
 #sh-navigation {
     background: white;
@@ -99,7 +97,7 @@ body.no-scroll {
             }
     }
 
-    .sh-nav--secondary {
+    .sh-nav--secondary, .sh-nav--secondary__mobile {
         justify-self: end;
         display: flex;
         gap: 1rem;
@@ -159,22 +157,24 @@ body.no-scroll {
     width: 100%;	
     position: fixed;
     bottom: 0;
+    z-index: 2;
     background-color: #f3f3f3;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
+
     & > div {
         display: block;
         text-align: center;
     }
-    a {
-        color: $color-blue !important;
+    a, span {
         padding: 0 .5em !important;
         line-height: 1.15;
+        
         &:hover { color: $color-navy-blue; }
-    }
-    
-    i {
-        font-size: $text__h3;
-        color: $color-navy-blue;
+
+        span {
+            font-size: $text__sm;
+            margin-top: .5rem;
+        }
     }
 }
 
@@ -230,232 +230,155 @@ body.no-scroll {
 }
 
 
-#sh-nav {
-    position: relative;
-    z-index: 99;
-    background: white;
-    @include breakpoint(tablet) {
-        display: none;
-        position: fixed;
+@media (min-width: 1025px) {
+
+    #menu {
+        position: relative;
+        z-index: 99;
+        background: white;
+        //padding-right: 8rem;
+        //padding-left: 8rem;
         top: 0;
-        width: 100%;
-        height: 100%;
-        background: $color-background;
-        padding-right: 0;
-        padding-left: 0;
 
-        &.sh-nav--is-open {
-            display: block;
-            overflow-y: auto;
-            overflow-x: hidden;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
         }
-    }
-}
 
-.sh-bottom-nav ul {
-    margin: 0;
-    padding-left: 0;
-    display: flex;
-    gap: 1em;
-    align-items: center;
-    min-height: 3rem;
-    position: relative;
-
-    @include breakpoint(tablet) {
-        flex-direction: column;
-        align-items: start;
-    }
-    
-    li {
-        display: block;
-        transition-duration: 0.3s;
-	    position: relative;
-        text-decoration: none;
-        color: $color-navy-blue;
-        padding-bottom: 0;
-
-        @include breakpoint(tablet) {
-            border-bottom: 1px solid $color-grey-50;
-            width: 100%;
-            background: #f6f6f6;
-
-            a, span {
-                font-size: 1em;
-                padding: 1rem !important;
+        > ul {
+            margin: 0;
+            padding-left: 0;
+            display: flex;
+            gap: 1em;
+            align-items: center;
+            min-height: 3rem;
+            position: relative;
+            
+            > li {
                 display: block;
-            }
-            
-        }
+                transition-duration: 0.3s;
+                
+                text-decoration: none;
+                color: $color-navy-blue;
+                padding-bottom: 0;
 
-        &:hover {
-            color: $color-blue;
-        }
+                &:not(.sh-nav-products) {
+                    position: relative;
+                }
 
-        span:after {
-            content: '\e892';
-            font-family: 'herco';
-            padding-left: .5rem;
-        }
+                &.sh-nav-products {
+                    flex: 1;
+                }
 
-        a, span {
-            text-decoration: none;
-            text-transform: uppercase;
-            width: 100%;
-            padding: .5em;
+
                 &:hover {
+                    color: $color-blue;
+                }
+
+                span:after {
+                    content: '\e892';
+                    font-family: 'herco';
+                    padding-left: .5rem;
+                }
+
+                a, span {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    width: 100%;
+                    padding: .5em;
                     color: $color-navy-blue;
+                        
+                        &:hover {
+                            color: $color-blue;
+                        }
                 }
-        }
-
-        &.back-submenu__toggle {
-            padding: 1rem;
-            &::before {
-                content: '\e848';
-                font-family: 'herco';
-                padding-right: .5rem;
             }
 
-        }
-    }
+            li:hover {
+                cursor: pointer;
+                background-color: white;
+            }
 
-    li:hover {
-        cursor: pointer;
-        background-color: white;
-    }
-
-    li ul {
-        transform: translateY(1.5rem);
-        visibility: hidden;
-        opacity: 0;
-        position: absolute;
-        margin-top: .75rem;
-        left: 0;
-        min-width: 272px;
-        box-shadow: 0 2px 4px 0 rgba(48,49,51,.1);
-        border-radius: 2px;
-        display: block;
-        transition: all 0.5s ease;
-        
-        z-index: 1;
-
-        @include breakpoint(tablet) {
-            transform: translateX(50rem);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            margin-top: 0;
-        }
-        
-    }
-
-    @media (min-width: 1025px) {
-        li:hover > ul,
-        li ul:hover {
-            visibility: visible;
-            opacity: 1;
-            transform: translateY(1px);
-            
-        }
-        
-    }
-
-    @include breakpoint(tablet) {
-
-        li.submenu-open > ul {
-            visibility: visible;
-            opacity: 1;
-            transform: translateX(0px);
-            transition: all 0.5s ease;
-
-        }
-    }
-
-    li ul li {
-        clear: both;
-        background: #f6f6f6;
-        text-align: left;
-        border-bottom: 1px solid $color-grey-50;
-        padding: 0;
-        
-        &:last-child {
-            border-radius: 2px;
-        }
-
-        a, span {
-            font-size: 1em;
-            padding: 1rem;
-            display: block;
-        }
-    }
-}
-
-li.sh-nav-products--OFF {
-    flex: 1;
-    position: initial !important;
-
-    & > ul {
-        width: 100%;
-        height: 60dvh;
-        overflow-y: scroll;
-
-        li {
-            width: 33%;
-            position: initial !important;
-
-            @include breakpoint(tablet) {
-                width: 100%;
+            li ul {
+                transform: translateY(1.5rem);
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                margin-top: .75rem;
+                left: 0;
+                min-width: 272px;
+                box-shadow: 0 2px 4px 0 rgba(48,49,51,.1);
+                border-radius: 2px;
+                display: block;
+                transition: all 0.5s ease;
+                
+                z-index: 1;
                 
             }
 
-            &:has(ul)::after {
-                //content: '\e849';
-                font-family: 'herco';
-                padding-left: .5rem;
+            li ul li {
+                clear: both;
+                background: #f6f6f6;
+                text-align: left;
+                border-bottom: 1px solid $color-grey-50;
+                padding: 0;
                 
-            }
+                &:last-child {
+                    border-radius: 2px;
+                }
 
-            ul {
-                left: 33%;
-                width: 33%;
-                top: -1px;
-                margin-top: 0;
-                height: 60dvh;
-                overflow-y: scroll;
+                a, span {
+                    font-size: 1em;
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: space-between;
 
-                @include breakpoint(tablet) {
-                    left: 0;
-                    width: 100%;
+                    &.sh-nav-has-submenu:after {
+                        content: '\e849';
+                        font-family: 'herco';
+                        padding-right: .5rem;
+                    }
+                }
+
+                ul {
+                    left: 100%;
                     top: 0;
-                }
-
-                li {
-                    position: initial !important;
-                    width: 100%;
-
-                    @include breakpoint(tablet) {
-                        width: 100%;
-                    }
-
-                    ul {
-                        left: 50%;
-                        width: 100%;
-
-                        @include breakpoint(tablet) {
-                            left: 100%;
-                            width: 100%;
-                        }
-
-                        li {
-                            width: 100%;
-                        }
-                    }
+                    margin-top: 0;
                 }
             }
+
+            li:hover > ul,
+            li ul:hover {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(1px);
+            }
+
+            .sh-nav-submenu--container {
+                height: 600px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                background-color: #f6f6f6;
+                width: 25dvw;
+            }
+        }
+
+        .sh-nav--secondary__mobile {
+            display: none;
+        }
+
+        li.sh-nav-products {
+           
         }
     }
-
 }
+
+
+
+
+
+
 
 li.submenu-open {
 
