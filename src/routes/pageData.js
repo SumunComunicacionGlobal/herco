@@ -53,7 +53,22 @@ const pageData = {
     pageTitle: 'Checkout - Suministros Herco',
     bodyClass: 'checkout',
     robots: 'noindex'
-  }
+  },
+  login: {
+    pageTitle: 'Iniciar sesión - Suministros Herco',
+    bodyClass: 'login',
+    robots: 'noindex'
+  },
+  'find-order': {
+    pageTitle: 'Buscar pedido - Suministros Herco',
+    bodyClass: 'findorder',
+    robots: 'noindex'
+  },
+  welcome: {
+    pageTitle: 'Bienvenido - Suministros Herco',
+    bodyClass: 'welcome',
+    robots: 'noindex'
+  },
   // Agrega más vistas aquí según sea necesario
 };
 
