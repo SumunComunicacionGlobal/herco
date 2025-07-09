@@ -1,27 +1,112 @@
 <%- include('partials/hero-page', { title: 'Aviso Legal' }) %>
-<div class="container-fluid">
-    <div id="header-bar" class="sh-m-bottom">
-        <div>
-            <form class="sh-form-search" action="./buscar">
-                <input class="sh-input" type="text" placeholder="Buscar productos" name="search">
-                <button class="sh-btn__danger" type="submit"></button>
-            </form>
-        </div>
-        <div id="sh-breadcrumbs" class="sh-m-top__lg between-xs middle-xs dflex">
-            <div id="sh-breadcrumbs" class="sh-m-top__xl between-xs middle-xs dflex">
-                <partial src="/sections/breadcrumbs.html" category-page="Aviso Legal"></partial>
-            </div>
-        </div>
-    </div>
-</div>
+<%- include('partials/components/header-bar', { placeholder: 'Buscar en HERCO...' }) %>
+<%- include('partials/components/breadcrumbs', { secondLevel: 'Aviso Legal', thirdLevel: null, fourthLevel: null }) %>
 
 <main class="sh-m-bottom__xl sh-m-top__lg container-fluid" aria-label="Main content">
     <div class="row">
-        
+
         <div class="col-xs-12 col-md-8">
-            <h2 class="sh-divider__header">Aviso legal</h2>
-            <p class="sh-m-top__md sh-m-bottom__md">En cumplimiento de lo dispuesto en el artículo 10 de la Ley 34/2002, de 11 de Julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSICE), ponemos en su conocimiento que la titular del dominio www.suministrosherco.com / www.nosolotronillos.com es Suministros Industriales Herco, s.a con CIF: A50203058, domiciliada en Cra. de Valencia Km 7,700 de Cuarte de Huerva, Zaragoza.</p>
-            <p>Puede contactar con nosotros por correo postal, telefónicamente llamando al 976 50 39 27 o a través del e-mail info@suministrosherco.com Suministros Industriales Herco, s.a es una sociedad española con domicilio en Cra. de Valencia km 7,700, inscrita en el Registro Mercantil de Zaragoza, en Tomo 759, general 514, Sección 3ª, Folio 75, hoja 9.158 de 13/02/1988 con número de CIF A-50203058</p>
+            <h2 class="sh-divider__header">Aviso legal y Condiciones de uso de la Web</h2>
+            <p class="sh-m-top__md sh-m-bottom__md">La utilización del portal suministrosherco.com está sujeta a las siguientes condiciones de uso que rogamos lea atentamente. </p>
+            <h3>1. Titularidad de la Web
+            </h3>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody><tr>
+                    <td style="padding: 8px">Nombre de dominio: 
+                    </td>
+                    <td style="padding: 8px">suministrosherco.com
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px">Titular:
+                    </td>
+                    <td style="padding: 8px">SUMINISTROS INDUSTRIALES HERCO, S.A
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px">Dirección:
+                    </td>
+                    <td style="padding: 8px">Ctra. de Valencia Km 7,700
+                        <br>
+                        50410 Cuarte de Huerva (Zaragoza)
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px">CIF:
+                    </td>
+                    <td style="padding: 8px">A50203058
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px">Datos registrales:
+                    </td>
+                    <td style="padding: 8px">Inscrita en el Registro Mercantil de Zaragoza, en el Tomo 759, general 514,	Sección 3ª, Folio 75, hoja 9.158
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px">e-Mail:
+                    </td>
+                    <td style="padding: 8px">info@suministrosherco.com
+                    </td>
+                </tr>
+            </tbody></table>
+            <h3>2. Objeto
+            </h3>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                El prestador, responsable del sitio web (HERCO, en adelante), pone a disposición de los usuarios el presente documento con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de Servicios de la Sociedad de la Información y del Comercio Electrónico (LSSICE), así como informar a todos los usuarios del sitio web respecto a cuáles son las condiciones de uso del sitio web.
+            </p>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                Toda persona que acceda a este sitio web asume el papel de USUARIO, comprometiéndose a la observancia y cumplimiento riguroso de las disposiciones aquí dispuestas, así como a cualquier otra disposición legal que fuera de aplicación.
+            </p>
+            <h3>3. Responsabilidad
+            </h3>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                El prestador se exime de cualquier tipo de responsabilidad derivada de la información publicada en su sitio web, siempre que esta información haya sido manipulada o introducida por un tercero ajeno al mismo.
+            </p>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                El servicio de acceso al Portal incluye enlaces o links que pueden conducir al usuario a otros sitios y páginas web gestionadas por terceros, sobre las que HERCO no ejerce ningún tipo de control. En estos casos, HERCO actúa como prestador de servicios de intermediación de conformidad con lo dispuesto en el artículo 17 de la LSSICE. 
+            </p>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                HERCO no responde ni de los contenidos ni del estado de dichos sitios y páginas web. 
+            </p>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                El prestador no se hace responsable de la información y contenidos almacenados, a título enunciativo pero no limitativo, en foros, chat´s, generadores de blogs, comentarios, redes sociales o cualquier otro medio que permita a terceros publicar contenidos de forma independiente en la página web del prestador. No obstante y en cumplimiento de lo dispuesto en el art. 11 y 16 de la LSSICE, el prestador se pone a disposición de todos los usuarios, autoridades y fuerzas de seguridad, y colaborando de forma activa en la retirada o en su caso bloqueo de todos aquellos contenidos que pudieran afectar o contravenir la legislación nacional, o internacional, derechos de terceros o la moral y el orden público. 
+            </p>
+                <h3>4. Derechos de propiedad industrial e intelectual
+            </h3>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                El Usuario reconoce y acepta que todos los derechos de propiedad industrial e intelectual sobre los contenidos y cualesquiera otros elementos insertados en el Sitio Web pertenecen a Suministros Industriales Herco, S.A.
+            </p>
+                <p class="sh-m-top__md sh-m-bottom__md">
+                La totalidad del contenido del sitio web, incluyendo a título enunciativo pero no limitativo su programación, edición, compilación y demás elementos necesarios para su funcionamiento, los diseños, logotipos, texto y/o gráficos, imágenes, material gráfico o artístico presente en la web, son propiedad del prestador o en su caso dispone de licencia o autorización expresa por parte de los autores. Todos los contenidos del sitio web están protegidos por derechos de propiedad industrial e intelectual, inscritos en los correspondientes registros públicos bajo la titularidad de Suministros Industriales Herco, S.A o de terceros, sin que puedan entenderse cedidos al Usuario ninguno de los derechos de explotación sobre los mismos más allá de lo estrictamente necesario para el correcto uso del Portal.  
+            </p>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                En particular, queda prohibida, excepto para uso privado, la reproducción, la transformación, comunicación y en general cualquier otra forma de explotación, por cualquier procedimiento, de todo o parte de los contenidos del sitio web, así como el establecimiento de enlaces en webs externas a la página principal (suministrosherco.com) o cualquiera de sus páginas. 
+            </p> 
+            <p class="sh-m-top__md sh-m-bottom__md">
+                Estos actos sólo podrán ser realizados mediante autorización previa y por escrito del titular de la web en los términos y condiciones que estipule. Para solicitar dicha autorización diríjase a cualquier de las direcciones establecidas en el apartado uno de este aviso legal (Titularidad de la web). 
+            </p> 
+            <p class="sh-m-top__md sh-m-bottom__md">
+                No obstante, y una vez dada la autorización para el establecimiento de enlaces, se prohíben expresamente que éstos impliquen el visionado de la página enlazada en el navegador por medio de marcos o frames. Cuando los enlaces se establezcan a cualquier página distinta de la página principal del sitio, deberá indicarse de forma expresa en el texto del enlace o de cualquier otra forma, tanto el nombre del sitio enlazado (suministrosherco.com) como el hecho de que se trata de un enlace a un portal ajeno a la web que incluye el enlace.
+            </p>
+                <h3>5. Protección de datos
+            </h3>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                HERCO considera como objetivo básico garantizar la privacidad y confidencialidad de los datos personales de sus Usuarios recabados a través de cualquier sistema que permita la transmisión de datos y manifiesta su compromiso de cumplimiento con la normativa establecida en el Reglamento General de Protección de Datos (Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016, relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos y por el que se deroga la Directiva 95/46/CE), tomándose las medidas de seguridad necesarias para garantizar la confidencialidad, integridad, disponibilidad y evitar su alteración, pérdida, tratamiento o acceso no autorizado por parte de terceros.
+            </p>
+                <p class="sh-m-top__md sh-m-bottom__md">
+                    Se contempla un apartado específico sobre Protección de Datos Personales y las relaciones correspondientes entre el Usuario/Cliente y HERCO (<span class="link-ofuscado" onclick="window.open('https://suministrosherco.com/politica-privacidad','_self')"><strong>Política de Privacidad</strong></span>). 
+                    </p>
+                <h3>6. Condiciones generales de compra
+            </h3>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                Puede consultar las condiciones generales de compra aplicables en el apartado <span class="link-ofuscado" onclick="window.open('https://suministrosherco.com/terminos-y-condiciones-de-uso','_self')"><strong>“Condiciones Generales de Venta”</strong></span>. 
+            </p>
+                <h3>7. Ley aplicable y jurisdicción
+            </h3>
+            <p class="sh-m-top__md sh-m-bottom__md">
+                Para la resolución de todas las controversias o cuestiones relacionadas con el presente sitio web o de las actividades en él desarrolladas, será de aplicación la legislación española, a la que se someten expresamente las partes, siendo competentes para la resolución de todos los conflictos derivados o relacionados con su uso los Juzgados y Tribunales del lugar donde el consumidor o usuario tenga su residencia habitual..
+            </p>
         </div>
 
     </div>

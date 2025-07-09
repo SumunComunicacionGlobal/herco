@@ -14,7 +14,7 @@
             </div>
 
             <!-- If are more images show thumbnails and lightbox gallery -->
-            <partial src="/gallery-lightbox.html"></partial>
+            <%- include('partials/components/gallery-lightbox') %>
 
         </div>
         <div class="col-xs-12 col-md-6 col-md-offset-1">
@@ -82,7 +82,7 @@
             <div class="sh-tabs-wrapper">
 
                 <div class="sh-tab-content" id="c1">
-                    <partial src="/sections/product-table.html"></partial>
+                    <%- include('partials/sections/product-table') %>
                 </div>
 
                 <div class="sh-tab-content sh-box sh-space__lg" id="c2">
@@ -171,6 +171,41 @@
     </div>
 </div>
 
+<div class="sh-space__top__xxl sh-space__bottom__xxl container-fluid sh-bg__white">
+    <div class="row sh-m-bottom center-xs">
+        <div class="col-xs-12 col-md-4  sh-m-bottom__lg">
+            <p class="sh-divider__header sh-text__h2">Productos recomendados HERCO</p>
+        </div>
+    </div>
+    <div class="row sh-p-relative">
+        <div class="col-xs-12">
+            <div class="swiper-products">
+            <div class="swiper-wrapper">
+                <% const products = [
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Panter', productPrice: '39,87', productName: 'Zapato Panter Apolo Napa S3 247' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'ATG', productPrice: '0,35', productName: 'Guante Maxiflex Elite ATG 34-247' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Faru', productPrice: '1,29', productName: 'Barbuquejo' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: '3M', productPrice: '2,29', productName: 'Lorem' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Faru', productPrice: '1,29', productName: 'Guantes' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' }
+                ]; %>
+                <% products.forEach(product => { %>
+                <div class="swiper-slide">
+                    <%- include('partials/components/card', product) %>
+                </div>  
+                <% }) %>
+            </div>
+            </div>
+            <!-- navigation buttons -->
+            <div class="swiper-button-prev-products"></div>
+            <div class="swiper-button-next-products"></div>
+            
+        </div>
+    </div>
+</div>
+
 <div class="sh-m-top__xl sh-m-bottom__xl container-fluid">
     <div class="row">
         <div class="col-xs-12 col-lg-3">
@@ -181,14 +216,19 @@
 
         <div class="col-xs-12 col-lg-9">
             <div class="sh-grid sh-grid--scroll sh-scroll no-scrollbar">
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Apolo" product-price="0,35" product-name="Apolo Taco Nylon Avellanado NPC"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Panter" product-price="39,87" product-name="Zapato Panter Apolo Napa S3 247"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="ATG" product-price="0,35" product-name="Guante Maxiflex Elite ATG 34-247"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Faru" product-price="1,29" product-name="Barbuquejo"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="3M" product-price="2,29" product-name="Lorem"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Faru" product-price="1,29" product-name="Guantes"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Apolo" product-price="0,35" product-name="Apolo Taco Nylon Avellanado NPC"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="3M" product-price="2,29" product-name="Lorem"></partial>
+                <% const products2 = [
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'Panter', productPrice: '39,87', productName: 'Zapato Panter Apolo Napa S3 247' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'ATG', productPrice: '0,35', productName: 'Guante Maxiflex Elite ATG 34-247' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'Faru', productPrice: '1,29', productName: 'Barbuquejo' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: '3M', productPrice: '2,29', productName: 'Lorem' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'Faru', productPrice: '1,29', productName: 'Guantes' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' }
+                ]; %>
+                <% products2.forEach(product2 => { %>
+                    <%- include('partials/components/card', product2) %>
+                <% }) %>
             </div>
         </div>
     </div>
@@ -205,10 +245,15 @@
 
         <div class="col-xs-12 col-lg-9">
             <div class="sh-grid sh-grid--scroll sh-scroll no-scrollbar">
-                <partial src="card.html" label="sh-badge-red" product-label="Promoción" product-brand="Apolo" product-price="0,35" product-name="Apolo Taco Nylon Avellanado NPC"></partial>
-                <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Panter" product-price="39,87" product-name="Zapato Panter Apolo Napa S3 247"></partial>
-                <partial src="card.html" label="sh-badge-green" product-label="Novedad" product-brand="ATG" product-price="0,35" product-name="Guante Maxiflex Elite ATG 34-247"></partial>
-                <partial src="card.html" label="sh-badge-green" product-label="Novedad" product-brand="Faru" product-price="1,29" product-name="Barbuquejo"></partial>
+                <% const products3 = [
+                    { classLabel: 'sh-badge-red', productLabel: 'Promoción', productBrand: 'Apolo', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+                    { classLabel: 'sh-badge', productLabel: 'Top Ventas', productBrand: 'Panter', productPrice: '39,87', productName: 'Zapato Panter Apolo Napa S3 247' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'ATG', productPrice: '0,35', productName: 'Guante Maxiflex Elite ATG 34-247' },
+                    { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Faru', productPrice: '1,29', productName: 'Barbuquejo' },
+                ]; %>
+                <% products3.forEach(product3 => { %>
+                    <%- include('partials/components/card', product3) %>
+                <% }) %>
             </div>
         </div>
     </div>

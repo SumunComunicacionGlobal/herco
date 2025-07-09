@@ -94,26 +94,73 @@ const pageData = {
     bodyClass: 'my-account',
     robots: 'noindex'
   },
-  'facturas': {
+  facturas: {
     pageTitle: 'Facturas - Suministros Herco',
     bodyClass: 'invoices',
     robots: 'noindex'
   },
-  'facturas': {
-    pageTitle: 'Facturas - Suministros Herco',
-    bodyClass: 'invoices',
-    robots: 'noindex'
-  },
-  'pedidos': {
+  pedidos: {
     pageTitle: 'Pedidos - Suministros Herco',
     bodyClass: 'orders',
     robots: 'noindex'
   },
-  'preferencias': {
+  preferencias: {
     pageTitle: 'Preferencias - Suministros Herco',
     bodyClass: 'preferences',
     robots: 'noindex'
-  }
+  },
+  'mision-vision-y-valores': {
+    pageTitle: 'Mision, vision y valores - Suministros Herco',
+    bodyClass: 'mission',
+    robots: 'noindex'
+  },
+  'herco-premium': {
+    pageTitle: 'Herco Premium - Suministros Herco',
+    bodyClass: 'herco-premium',
+    robots: 'noindex'
+  },
+  'portal-proveedores': {
+    pageTitle: 'Ser proveedor HERCO - Suministros Herco',
+    bodyClass: 'herco-premium',
+    robots: 'noindex'
+  },
+  'alta-cliente': {
+    pageTitle: 'Ser cliente HERCO - Suministros Herco',
+    bodyClass: 'herco-premium',
+    robots: 'noindex'
+  },
+  'herco-solidario': {
+    pageTitle: 'HERCO Solidario - Suministros Herco',
+    bodyClass: 'herco-solidario',
+    robots: 'noindex'
+  },
+  'club-nosolotornillos': {
+    pageTitle: 'Club No Solo Tornillos - Suministros Herco',
+    bodyClass: 'club-nosolotornillos',
+    robots: 'noindex'
+  },
+  'repair-cafe': {
+    pageTitle: 'Repair Café - Suministros Herco',
+    bodyClass: 'repair-cafe',
+    robots: 'noindex'
+  },
+  'emprenderores-formacion': {
+    pageTitle: 'Apoyo a emprenderores y formación profesional - Suministros Herco',
+    bodyClass: 'emprenderores-formacion',
+    robots: 'noindex'
+  },
+  'gestion-reparacion-herramientas': {
+    pageTitle: 'Reparación de herramientas - Suministros Herco',
+    bodyClass: 'reparacion-herramientas',
+    robots: 'noindex'
+  },
+  'outsourcing-consultoria': {
+    pageTitle: 'Outsourcing y consultoría - Suministros Herco',
+    bodyClass: 'outsourcing-consultoria',
+    robots: 'noindex'
+  },
+  
+  
   // Agrega más vistas aquí según sea necesario
 };
 

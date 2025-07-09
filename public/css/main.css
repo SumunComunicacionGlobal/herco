@@ -4750,7 +4750,6 @@ select::-ms-expand {
 
 .sh-card-blog__mini {
   display: flex;
-  padding: 0;
 }
 @media (max-width: 768px) {
   .sh-card-blog__mini {

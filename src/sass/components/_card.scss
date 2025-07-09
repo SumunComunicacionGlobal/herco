@@ -193,7 +193,6 @@
 
 .sh-card-blog__mini  {
   display: flex;
-  padding: 0;
 
   @include breakpoint (mobile) {
     display: block;
