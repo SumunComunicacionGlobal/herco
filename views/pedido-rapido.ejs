@@ -1,0 +1,27 @@
+
+<main class="sh-text__white">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-md-offset-3 sh-m-top__lg">
+                <h5 class="sh-m-bottom__md">Pedido rápido</h5>
+                <div class="quickorder-form sh-m-bottom__md">
+                    <input class="sh-input" type="text" placeholder="Referencia" name="ref">
+                    <div class="sh-input-quantity">
+                        <input class="sh-input" min="1" name="quantity" value="1" type="number">
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                            class="plus">+</button>
+                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                            class="minus">–</button>
+                    </div>
+                    <button type="submit" class="sh-btn__white">Añadir</button>
+                </div>
+            </div>
+        </div>
+        <div class="row center-xs sh-m-top__lg sh-m-bottom__xxl">
+            <div class="col-xs-12 col-md-6">
+                <h2>¿Necesitas ayuda?</h2>
+                <button class="sh-btn-outline__sucess">Contactar</button>
+            </div>
+        </div>
+    </div>
+</main>

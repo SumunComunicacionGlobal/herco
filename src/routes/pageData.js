@@ -69,6 +69,16 @@ const pageData = {
     bodyClass: 'welcome',
     robots: 'noindex'
   },
+  'pedido-rapido': {
+    pageTitle: 'Pedido rápido - Suministros Herco',
+    bodyClass: 'quickorder',
+    robots: 'noindex'
+  },
+  'confirm-account': {
+    pageTitle: 'Confirmación de su cuuenta - Suministros Herco',
+    bodyClass: 'thanks',
+    robots: 'all'
+  },
   // Agrega más vistas aquí según sea necesario
 };
 
