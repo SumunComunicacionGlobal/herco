@@ -54,6 +54,16 @@ const pageData = {
     bodyClass: 'checkout',
     robots: 'noindex'
   },
+  gracias: {
+    pageTitle: 'Gracias por su compra - Suministros Herco',
+    bodyClass: 'thanks',
+    robots: 'all'
+  },
+  'checkout-login': {
+    pageTitle: 'Checkout - Suministros Herco',
+    bodyClass: 'checkout',
+    robots: 'noindex'
+  },
   login: {
     pageTitle: 'Iniciar sesión - Suministros Herco',
     bodyClass: 'login',
@@ -75,10 +85,35 @@ const pageData = {
     robots: 'noindex'
   },
   'confirm-account': {
-    pageTitle: 'Confirmación de su cuuenta - Suministros Herco',
+    pageTitle: 'Confirmación de su cuenta - Suministros Herco',
     bodyClass: 'thanks',
     robots: 'all'
   },
+  'mi-cuenta': {
+    pageTitle: 'Mi cuenta - Suministros Herco',
+    bodyClass: 'my-account',
+    robots: 'noindex'
+  },
+  'facturas': {
+    pageTitle: 'Facturas - Suministros Herco',
+    bodyClass: 'invoices',
+    robots: 'noindex'
+  },
+  'facturas': {
+    pageTitle: 'Facturas - Suministros Herco',
+    bodyClass: 'invoices',
+    robots: 'noindex'
+  },
+  'pedidos': {
+    pageTitle: 'Pedidos - Suministros Herco',
+    bodyClass: 'orders',
+    robots: 'noindex'
+  },
+  'preferencias': {
+    pageTitle: 'Preferencias - Suministros Herco',
+    bodyClass: 'preferences',
+    robots: 'noindex'
+  }
   // Agrega más vistas aquí según sea necesario
 };
 

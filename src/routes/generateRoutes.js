@@ -11,21 +11,40 @@ const generatePageData = (viewName) => {
   };
 };
 
-// Función para detectar las vistas y generar rutas
-const generateRoutes = (router) => {
-  const viewsDir = path.join(__dirname, '../../views');
-  const files = fs.readdirSync(viewsDir);
+// Función recursiva para encontrar todas las vistas .ejs (incluyendo subcarpetas)
+function findViews(dir, prefix = '') {
+  let views = [];
+  const files = fs.readdirSync(dir);
 
   files.forEach(file => {
-    if (file.endsWith('.ejs') && !file.startsWith('_') && file !== 'layout.ejs') {
-      const viewName = file.replace('.ejs', '');
-      const routePath = viewName === 'index' ? '/' : `/${viewName}`;
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
 
-      router.get(routePath, (req, res) => {
-        const data = generatePageData(viewName);
-        res.render(viewName, data);
-      });
+    if (stat.isDirectory()) {
+      views = views.concat(findViews(fullPath, prefix + file + '/'));
+    } else if (
+      file.endsWith('.ejs') &&
+      !file.startsWith('_') &&
+      file !== 'layout.ejs'
+    ) {
+      views.push(prefix + file.replace('.ejs', ''));
     }
+  });
+
+  return views;
+}
+
+// Función para generar rutas dinámicamente
+const generateRoutes = (router) => {
+  const viewsDir = path.join(__dirname, '../../views');
+  const views = findViews(viewsDir);
+
+  views.forEach(viewName => {
+    const routePath = viewName === 'index' ? '/' : `/${viewName}`;
+    router.get(routePath, (req, res) => {
+      const data = generatePageData(viewName);
+      res.render(viewName, data);
+    });
   });
 };
 
