@@ -1,7 +1,7 @@
 
 <%- include('partials/hero-subcategory', { title: 'Protección y vestuario', bgimg: 'bg-proteccion-vestuario.jpg' }) %>
 <%- include('partials/components/header-bar', { placeholder: 'Buscar en Herco...' }) %>
-<%- include('partials/components/breadcrumbs', { secondLevel: 'Protección y vestuario', thirdLevel: null }) %>
+<%- include('partials/components/breadcrumbs', { secondLevel: 'Protección y vestuario', thirdLevel: null, fourthLevel: null }) %>
 <%- include('partials/components/list-subcategories') %>
 
 <main class="sh-m-bottom__xl sh-m-top__xl" aria-label="Main content">
@@ -93,14 +93,6 @@
                     <% productsC.forEach(productC => { %>
                         <%- include('partials/components/card', productC) %>
                     <% }) %>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Apolo" product-price="0,35" product-name="Apolo Taco Nylon Avellanado NPC"></partial>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Panter" product-price="39,87" product-name="Zapato Panter Apolo Napa S3 247"></partial>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="ATG" product-price="0,35" product-name="Guante Maxiflex Elite ATG 34-247"></partial>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Faru" product-price="1,29" product-name="Barbuquejo"></partial>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="3M" product-price="2,29" product-name="Lorem"></partial>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Faru" product-price="1,29" product-name="Guantes"></partial>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="Apolo" product-price="0,35" product-name="Apolo Taco Nylon Avellanado NPC"></partial>
-                    <partial src="card.html" label="sh-badge" product-label="Top Ventas" product-brand="3M" product-price="2,29" product-name="Lorem"></partial>  
                 </div>
             </div>
         </div>

@@ -29,6 +29,17 @@
                 <meta itemprop="position" content="3">
             </li>
             <% } %>
+            <% if (fourthLevel) { %>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+                <span>
+                    <i class="icon icon-right-open"></i>
+                    <a itemprop="item" href="#" title="<%= fourthLevel %>">
+                        <span itemprop="name"><%= fourthLevel %></span>
+                    </a>
+                </span>
+                <meta itemprop="position" content="3">
+            </li>
+            <% } %>
         </ol> 
     </div>
 </div>

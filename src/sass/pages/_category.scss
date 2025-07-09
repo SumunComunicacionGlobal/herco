@@ -52,4 +52,12 @@
   margin-top: -32px;
 }
 
+.sh-products-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+
+  .sh-pagination {
+    flex-basis: 100%;
+  }
+}
 

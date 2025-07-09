@@ -5567,6 +5567,9 @@ body.mm-ocd-opened {
   margin: 0;
   padding: 0;
 }
+.sh-pagination div.end-sm {
+  margin-bottom: 0.25rem;
+}
 .sh-pagination li {
   display: inline-block;
   margin-left: 0.5em;
@@ -6557,6 +6560,14 @@ object {
 
 .cta-search-form {
   margin-top: -32px;
+}
+
+.sh-products-filter-bar {
+  display: flex;
+  gap: 0.5rem;
+}
+.sh-products-filter-bar .sh-pagination {
+  flex-basis: 100%;
 }
 
 /*--------------------------------------------------------------
