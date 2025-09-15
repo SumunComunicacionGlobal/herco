@@ -1765,7 +1765,7 @@ blockquote {
 }
 
 .sh-no__margin {
-  margin: 0;
+  margin: 0 !important;
 }
 
 .sh-m-bottom__sm {
@@ -3226,18 +3226,18 @@ a.sh-btn-outline__allwhite:active, .sh-btn-outline__allwhite:active {
 }
 
 /* button size */
-.sh-btn__sm {
+a.sh-btn__sm, .sh-btn__sm {
   font-size: calc(0.75 * 1em);
   height: 1.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-.sh-btn__lg {
+a.sh-btn__lg, .sh-btn__lg {
   font-size: calc(1.5 * 1em);
   height: 4rem;
   padding: 0 1.5em;
 }
-.sh-btn__full {
+a.sh-btn__full, .sh-btn__full {
   width: 100%;
 }
 
