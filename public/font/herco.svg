@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2018 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2025 by original authors @ fontello.com</metadata>
 <defs>
 <font id="herco" horiz-adv-x="1000" >
 <font-face font-family="herco" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
@@ -321,6 +321,8 @@
 <glyph glyph-name="leaf" unicode="&#xe89c;" d="M236 646q182 106 506 66 168-22 196-50 4-6-2-10-76-40-130-109t-78-132-65-132-93-105q-138-96-382-4-66-76-114-176-12-24-47-7t-25 39q44 100 129 193t176 153 176 106 141 68l54 20q-14 0-41-1t-104-14-148-38-162-84-161-141q-22 242 174 358z" horiz-adv-x="940" />
 
 <glyph glyph-name="address" unicode="&#xe89d;" d="M426 800q20 0 20-20l0-860q0-20-20-20l-46 0q-20 0-20 20l0 440-176 0q-16 0-28 6-12 2-26 12l-120 82q-10 6-10 16t10 16l120 82q14 10 26 12 8 4 28 4l176 0 0 190q0 20 20 20l46 0z m564-208q10-6 10-16t-10-16l-118-82q-22-12-26-12-14-6-28-6l-302 0-40 230 342 0q18 0 28-4t26-12z" horiz-adv-x="1000" />
+
+<glyph glyph-name="x" unicode="&#xe8b4;" d="M871 850h170l-373-424 435-576h-341l-268 350-306-350h-170l395 454-417 546h350l242-320z m-60-900h95l-609 804h-101z" horiz-adv-x="1107" />
 
 <glyph glyph-name="twitter" unicode="&#xf099;" d="M904 622q-37-54-90-93 0-8 0-23 0-73-21-145t-64-139-103-117-144-82-181-30q-151 0-276 81 19-2 43-2 126 0 224 77-59 1-105 36t-64 89q19-3 34-3 24 0 48 6-63 13-104 62t-41 115v2q38-21 82-23-37 25-59 64t-22 86q0 49 25 91 68-83 164-133t208-55q-5 21-5 41 0 75 53 127t127 53q79 0 132-57 61 12 115 44-21-64-80-100 52 6 104 28z" horiz-adv-x="928.6" />
 
