@@ -3800,7 +3800,7 @@ li.submenu-open > ul.sh-nav-submenu {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: 0% 0%;
+  object-position: 100% 0%;
   z-index: -1;
   left: 0;
   right: 0;
