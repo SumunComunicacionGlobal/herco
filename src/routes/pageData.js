@@ -1,6 +1,6 @@
 const pageData = {
   index: {
-    pageTitle: 'Suministros Herco',
+    pageTitle: 'Proveedor de suministros industriales - Suministros Herco',
     bodyClass: 'homepage',
     robots: 'all'
   },
@@ -159,8 +159,12 @@ const pageData = {
     bodyClass: 'outsourcing-consultoria',
     robots: 'noindex'
   },
-  
-  
+  'outsourcing-consultoria': {
+    pageTitle: 'Accesorios Bosch Expert Pro - Suministros Herco',
+    bodyClass: 'accesorios-bosch-expert-pro',
+    robots: 'index'
+  },
+
   // Agrega más vistas aquí según sea necesario
 };
 

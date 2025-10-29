@@ -1,0 +1,150 @@
+<%- include('partials/hero-subcategory', { title: 'Accesorios Bosch', bgimg: 'bosch-accesorios-img_1.jpg' }) %>
+
+<div class="container-fluid">
+    <div id="header-bar" class="sh-m-bottom">
+        <div>
+            <div class="sh-form-search">
+                <a href="/contacto" target="_blank" class="sh-btn sh-btn__danger">Contactar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/components/breadcrumbs', { secondLevel: 'Accesorios Bosch', thirdLevel: null, fourthLevel: null }) %>
+
+
+<main class="sh-m-bottom__xl sh-m-top__xl" aria-label="Main content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-5 sh-m-bottom">
+                <h2 class="sh-m-bottom sh-divider__header">3 niveles de calidad Bosch</h2>
+                <p class="sh-m-top__lg">Los accesorios para herramientas eléctricas de Bosch ahora se dividen en tres líneas de rendimiento: Básica, Expert y Pro. Cada línea está diseñada para satisfacer las necesidades específicas de los usuarios, desde aficionados hasta profesionales exigentes.</p>
+                <p class="sh-m-bottom__xl">Ahora es más fácil elegir el accesorio adecuado para el trabajo con las categorías de rendimiento de Bosch. Cada categoría de rendimiento está diseñada para adaptarse a diversas aplicaciones y ayudarte a elegir con confianza el accesorio más adecuado. </p>
+                <a href="https://suministrosherco.com/marcas/bosch" target="_blank" class="sh-btn">Ver productos Bosch</a>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-sm-offset-1 sh-m-bottom">
+                <div class="embed-container">
+                    <video src="/img/low/bosch-expert-pro-video_1.mp4" controls="" autoplay="" muted width="100%"></video>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+    <div class="container-fluid sh-bg__navy-blue sh-text__white sh-m-top__xl">
+        <div class="row center-xs sh-m-bottom__xl">
+            <div class="col-xs-12 sh-m-bottom sh-m-top__lg center-xs">
+                <h2 class="sh-m-bottom">Siempre la mejor elección con Bosch</h2>
+                <p class="sh-text__h5">Las herramientas eléctricas de Bosch incluyen 3 nuevas líneas de rendimiento para sus accesorios</p>
+            </div>
+
+            <div class="col-xs-12 col-sm">
+                <div class="sh-m-top__lg">
+                     <img src="img/low/bosch-accesorios-img_3.1.jpg" alt="Bosch Expert" width="455px" height="455px">
+                    <p class="sh-text__h5">Máximo rendimiento</p>
+                    <p>Bosch Expert es sinónimo de calidad, durabilidad y tecnologías avanzadas, diseñado para satisfacer las demandas más exigentes.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm">
+                <div class="sh-m-top__lg sh-m-bottom__lg">
+                    <img src="img/low/bosch-accesorios-img_3.2.jpg" alt="Bosch Expert" width="455px" height="455px">
+                    <p class="sh-text__h5">Más productividad</p>
+                    <p>Los accesorios de la gama PRO están diseñados para ofrecer un rendimiento superior y una mayor eficiencia en su aplicación y material específico.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm">
+                <div class="sh-m-top__lg">
+                    <img src="img/low/bosch-accesorios-img_3.3.jpg" alt="Bosch Expert" width="455px" height="455px">
+                    <p class="sh-text__h5">Calidad de confianza</p>
+                    <p>Bosch amplia la cartera de accesorios y ofrece soluciones de alta calidad para satisfacer las necesidades de los profesionales más exigentes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="sh-m-top__xl sh-m-bottom__xl container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-lg-3">
+                <h2 class="sh-divider__header sh-text__h2">Productos Bosch</h2>
+                <p>Tanto si necesitas perforar hormigón armado en una obra como abrir un corte en ladrillo o simplemente particar un único orificio para la iluminación, ahora resultará más fácil que nunca elegir el accesorio adecuado.</p>
+
+                <div class="sh-m-top__lg sh-m-bottom__lg">
+                    <a class="sh-link" href="https://suministrosherco.com/marcas/bosch">Ver todos los productos Bosch <i class="icon icon-right-open"></i></a>
+                </div>  
+            </div>
+
+            <div class="col-xs-12 col-lg-9 ">
+            <div class="sh-grid sh-grid--scroll sh-scroll no-scrollbar">
+                <% const products = [
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '39,87', productName: 'Zapato Panter Apolo Napa S3 247' },
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '0,35', productName: 'Guante Maxiflex Elite ATG 34-247' },
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '1,29', productName: 'Barbuquejo' },
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '2,29', productName: 'Lorem' },
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '1,29', productName: 'Guantes' },
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' },
+                { classLabel: 'sh-badge-green', productLabel: 'Novedad', productBrand: 'Bosch', productPrice: '0,35', productName: 'Apolo Taco Nylon Avellanado NPC' }
+            ]; %>
+            <% products.forEach(product => { %>
+                <%- include('partials/components/card', product) %>
+            <% }) %>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid sh-m-top__xl sh-bg__white">
+        <div class="row">
+            <div class="col-xs-12 sh-m-top__lg center-xs">
+                <h3>Nuestro nuevo embalaje explicado</h3>
+                <video src="/img/low/bosch-expert-pro-video_2.mp4" controls="" autoplay="" muted width="100%"></video>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid sh-bg__navy-blue sh-text__white sh-m-top__xl">
+        <div class="row sh-space__bottom__xl">
+            <div class="col-xs-12 sh-m-bottom sh-m-top__lg">
+                <h2 class="sh-m-bottom">Preguntas frecuentes</h2>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                <div class="sh-m-top__lg">    
+                    <p class="sh-text__h5">¿Por qué Bosch ha cambiado los envases de los productos?</p><hr>
+                    <p>Bosch ha mejorado el diseño del envase de sus accesorios para garantizar que los usuarios puedan encontrar fácilmente la información más relevante. El objetivo es ofrecer al usuario la mejor orientación posible y facilitar la elección del accesorio adecuado.</p>
+                    <img src="img/low/bosch-accesorios-img_6.1.jpg" alt="Bosch Expert" width="" height="">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="sh-m-top__lg">    
+                    <p class="sh-text__h5">¿Por qué las marcas de los productos son distintas? ¿Sigue siendo el mismo producto con el mismo rendimiento?</p><hr>
+                    <p>Sí, sigue siendo el mismo producto con el mismo rendimiento. Bosch ha adaptado las marcas del producto para guiar mejor al usuario.</p>
+                     <img src="img/low/bosch-accesorios-img_6.2.jpg" alt="Bosch Expert" width="" height="">
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="sh-m-top__lg">    
+                    <p class="sh-text__h5">El envase del accesorio PRO que he pedido por internet es distinto del que he recibido. ¿Es el mismo accesorio?</p><hr>
+                    <p>Sí, es el mismo accesorio PRO con los mismos beneficios y el gran rendimiento de PRO. Actualmente Bosch está haciendo la transición de los envases antiguos a los nuevos, lo que significa que es posible que aún recibas productos con el envase antiguo. Bosch está haciendo todo lo posible para acortar este período de transición.</p>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6">
+                 <div class="sh-m-top__lg">    
+                    <p class="sh-text__h5">El nombre del accesorio PRO que he pedido en línea es distinto del nombre del que he recibido. ¿Es el mismo accesorio PRO?</p><hr>
+                    <p>Sí, es el mismo accesorio PRO con los mismos beneficios y el gran rendimiento de PRO. Bosch actualmente está haciendo la transición de los nombres y envases de productos antiguos a los nombres y envases PRO nuevos, lo que significa que es posible que aún recibas productos con nombres y envases antiguos. Bosch está haciendo todo lo posible para acortar este período de transición.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                 <div class="sh-m-top__lg">    
+                    <p class="sh-text__h5">¿Puedo devolver el accesorio en el envase antiguo y recibirlo en el nuevo?</p><hr>
+                    <p>No es necesario devolver productos que tengan envases antiguos. Son los mismos que los de los nuevos envases PRO. Solo el envase y las marcas del producto son distintos.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+</main>
+
+<%- include('partials/sections/cta-search') %>
+<%- include('partials/sections/brands') %>
