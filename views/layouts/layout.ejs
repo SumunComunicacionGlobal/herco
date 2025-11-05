@@ -13,8 +13,31 @@
 	<link rel="icon" href="img/low/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 	<link rel="stylesheet" href="css/main.css">
+    
     <!-- Datos estructurados -->
-    <%- include('../partials/schema') %>
+    <%- include('../partials/schema/schema-BreadcrumbList') %>
+    
+    <% if (bodyClass === 'homepage') { %>
+        <%- include('../partials/schema/schema-WebSite') %>
+        <%- include('../partials/schema/schema-Organization') %>
+        <%- include('../partials/schema/schema-LocalBusiness') %>
+    <% } %>
+
+    <% if (bodyClass === 'contact') { %>
+        <%- include('../partials/schema/schema-LocalBusiness') %>
+    <% } %>
+
+    <% if (bodyClass === 'mission') { %>
+        <%- include('../partials/schema/schema-Organization') %>
+    <% } %>
+
+    <% if (bodyClass === 'category') { %>
+        <%- include('../partials/schema/schema-ItemList') %>
+    <% } %>
+
+    <% if (bodyClass === 'product') { %>
+        <%- include('../partials/schema/schema-Product') %>
+    <% } %>
 </head>
 
 <body class="<%= bodyClass %>">

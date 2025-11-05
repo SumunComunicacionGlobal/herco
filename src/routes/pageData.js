@@ -44,6 +44,11 @@ const pageData = {
     bodyClass: 'subcategory',
     robots: 'index, follow'
   },
+  product: {
+    pageTitle: 'Product name - Suministros Herco',
+    bodyClass: 'product',
+    robots: 'index, follow'
+  },
   carrito: {
     pageTitle: 'Carrito - Suministros Herco',
     bodyClass: 'cart',

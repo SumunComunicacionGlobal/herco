@@ -43,6 +43,8 @@ const generateRoutes = (router) => {
     const routePath = viewName === 'index' ? '/' : `/${viewName}`;
     router.get(routePath, (req, res) => {
       const data = generatePageData(viewName);
+      data.breadcrumbUrl = `https://suministrosherco.com/${viewName === 'index' ? '' : viewName}`;
+
       res.render(viewName, data);
     });
   });
