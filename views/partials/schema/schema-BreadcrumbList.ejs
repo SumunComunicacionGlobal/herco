@@ -16,17 +16,17 @@
             "name": "<%= pageTitle %>",
             "item": "<%= breadcrumbUrl %>"
         }
-        <% }, %>
+        <% } %>
         <% if (bodyClass === 'subcategory' || bodyClass === 'product') { %>
-        {
+        ,{
             "@type": "ListItem",
             "position": 3,
             "name": "<%= pageTitle %>",
             "item": "<%= breadcrumbUrl %>"
         }
-        <% }, %>
+        <% } %>
         <% if (bodyClass === 'product') { %>
-        {
+        ,{
             "@type": "ListItem",
             "position": 4,
             "name": "<%= pageTitle %>",
