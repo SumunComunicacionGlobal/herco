@@ -19,7 +19,7 @@ Instalación
 
 ### Requirements
 
-`herco` requires the following dependencies:
+`herco` requiere las siguientes dependencias:
 
 - [Node.js](https://nodejs.org/) versión recomendada: 18.x o superior
 - [npm](https://www.npmjs.com/) gestor de paquetes de Node.js
@@ -55,7 +55,7 @@ El sitio estará disponible en http://localhost:3001 (o el puerto que indiques e
 
 ### Comandos CLI disponibles
 
-`hero` comes packed with CLI commands tailored for WordPress theme development :
+`hero` viene empaquetado con comandos CLI para el desarrollo del site:
 
 - `npm run dev` : Ejecuta el entorno de desarrollo completo (servidor, SASS y JS en modo watch).
 - `npm run watch:nodemon` : Solo lanza el servidor Express con recarga automática.
@@ -95,6 +95,7 @@ herco/
     ├── partials/
     │   ├── components/
     │   └── sections/
+    │   └── schema/
     └── *.ejs 
 ```
 
@@ -120,9 +121,10 @@ herco/
 **/src/js:**
 + Scripts de interacción y lógica de frontend.
 
-/src/sass:
+**/src/sass:**
 Estilos SCSS organizados en:
 
-core: Variables, mixins, helpers.
-components: Estilos de componentes (botones, navegación, etc).
-pages: Estilos específicos de páginas.
+* core: Variables, mixins, helpers.
+* components: Estilos de componentes (card, hero, footer, navegación, etc).
+* pages: Estilos específicos de páginas.
+* styles: Estilos de botonos, iconos, tipografía, etc.
