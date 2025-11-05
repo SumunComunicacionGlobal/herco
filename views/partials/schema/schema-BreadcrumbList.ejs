@@ -8,15 +8,15 @@
             "position": 1,
             "name": "Inicio",
             "item": "https://suministrosherco.com/"
-        },
+        }
         <% if (bodyClass === 'category' || bodyClass === 'subcategory' || bodyClass === 'product') { %>
-        {
+        ,{
             "@type": "ListItem",
             "position": 2,
             "name": "<%= pageTitle %>",
             "item": "<%= breadcrumbUrl %>"
         }
-        <% } %>
+        <% }, %>
         <% if (bodyClass === 'subcategory' || bodyClass === 'product') { %>
         {
             "@type": "ListItem",
@@ -24,7 +24,7 @@
             "name": "<%= pageTitle %>",
             "item": "<%= breadcrumbUrl %>"
         }
-        <% } %>
+        <% }, %>
         <% if (bodyClass === 'product') { %>
         {
             "@type": "ListItem",
