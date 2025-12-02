@@ -144,9 +144,9 @@ const pageData = {
     bodyClass: 'club-nosolotornillos',
     robots: 'noindex'
   },
-  'repair-cafe': {
+  'repaircafe': {
     pageTitle: 'Repair Café - Suministros Herco',
-    bodyClass: 'repair-cafe',
+    bodyClass: 'repaircafe',
     robots: 'noindex'
   },
   'emprenderores-formacion': {
