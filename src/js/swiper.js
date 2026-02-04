@@ -1,15 +1,3 @@
-
-
-//	Open the menu.
-//document.querySelector('a[href="#menu"]')
-//    .addEventListener('click', (evnt) => {
-//        menu.open();
-//
-//        //	Don't forget to "preventDefault" and to "stopPropagation".
-//        evnt.preventDefault();
-//        evnt.stopPropagation();
-//});
-
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     direction: 'horizontal',
@@ -24,7 +12,11 @@ const swiper = new Swiper('.swiper', {
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-    }
+    },
+
+    autoplay: {
+        delay: 5000,
+    },
 });
 
 const swiperProducts = new Swiper('.swiper-products', {
